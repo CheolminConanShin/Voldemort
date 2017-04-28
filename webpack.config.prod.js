@@ -29,7 +29,7 @@ module.exports = {
     },
     devServer: {
         publicPath: "/",
-        contentBase: "./client",
+        contentBase: "./www",
         historyApiFallback: true
     },
     resolve: {
