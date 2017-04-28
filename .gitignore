@@ -1,0 +1,14 @@
+#npm
+node_modules/
+npm-debug.log*
+
+#dist
+dist/
+platforms/
+www/
+plugins/
+
+#IDE
+.idea
+**/*.iml
+.DS_Store
