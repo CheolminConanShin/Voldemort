@@ -2,7 +2,6 @@ React Web Template
 - Redux
 - Webpack
 - Router
-- Bootstrap
 - Jest Unit Testing
 - Testcafe Integration E2E Testing
 
@@ -19,3 +18,5 @@ npm start
 
 - to run dev mode (hot deploy into distribution directory)<br>
 npm run dev
+
+yes!
