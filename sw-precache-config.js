@@ -1,10 +1,10 @@
 module.exports = {
-    stripPrefix: 'www/',
+    stripPrefix: 'docs/',
     staticFileGlobs: [
-        'www/**.css',
-        'www/**.html',
-        'www/**.js',
-        'www/config/manifest.json'
+        'docs/**.css',
+        'docs/**.html',
+        'docs/**.js',
+        'docs/config/manifest.json'
     ],
-    swFilePath: 'www/service-worker.js'
+    swFilePath: 'docs/service-worker.js'
 };
