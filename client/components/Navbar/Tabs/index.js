@@ -7,6 +7,11 @@ const styles = {
         marginTop: '8%',
         paddingLeft: '4.2vw',
         paddingRight: '4.2vw',
+    },
+    underLine: {
+        width: '30%',
+        transition: '.3s ease-in-out',
+        borderTop: '6px solid #7984f3'
     }
 }
 
@@ -23,7 +28,7 @@ export default class Tabs extends React.Component {
                 <Tab ref="tab1" index="1" text="사용중" width="25.5vw" clickHandler={this.resetTabs} classes='tabOne active'/>
                 <Tab ref="tab2" index="2" text="유지" width="33.7vw" clickHandler={this.resetTabs} classes='tabTwo'/>
                 <Tab ref="tab3" index="3" text="신규가능" width="25.5vw" clickHandler={this.resetTabs} classes='tabThree'/>
-                <hr/>
+                <hr style={styles.underLine}/>
             </div>
         )
     }

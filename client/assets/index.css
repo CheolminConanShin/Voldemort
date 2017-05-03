@@ -25,9 +25,3 @@ html, body, #root {
 .tabThree.active ~ hr {
     margin-left: 69%;
 }
-
-hr {
-    width: 30%;
-    transition: .3s ease-in-out;
-    border-top: 6px solid #7984f3 !important;
-}
