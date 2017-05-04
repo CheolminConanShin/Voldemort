@@ -1,0 +1,27 @@
+html, body, #root {
+    height: 100%;
+}
+
+.tab::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #000;
+}
+
+.active {
+    color: #7984f3;
+}
+
+.tabOne.active ~ hr {
+    margin-left: 0%;
+}
+
+.tabTwo.active ~ hr {
+    margin-left: 35%;
+}
+
+.tabThree.active ~ hr {
+    margin-left: 69%;
+}
