@@ -12,7 +12,7 @@ const CopyWebpackPluginConfig = new CopyWebpackPlugin([{from: './client/assets/'
 module.exports = {
     entry: './client/index.js',
     output: {
-        path: path.resolve('docs'),
+        path: path.resolve('www'),
         filename: 'index_bundle.js'
     },
     module: {
