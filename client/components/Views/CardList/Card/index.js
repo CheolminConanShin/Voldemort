@@ -24,7 +24,7 @@ const styles = {
         borderRadius: '100px',
         marginTop: '3%',
         marginLeft: '60%',
-        padding: '22px'
+        padding: '1vw'
     },
     satisfied: {
         fontSize: '5vw',

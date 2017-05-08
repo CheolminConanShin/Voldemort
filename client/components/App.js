@@ -4,6 +4,7 @@ import {BrowserRouter as Router, Route} from "react-router-dom";
 import HelloWorldComponent from "./HelloWorld";
 import CardMainView from './Views/CardMainView'
 import store from "../store"
+import CardDetailView from "./Views/CardDetailView";
 export default class App extends React.Component {
     render() {
         return (
@@ -11,6 +12,7 @@ export default class App extends React.Component {
                 <Router>
                     <div style={{height: "100%"}}>
                         <Route exact path="/" component={CardMainView}/>
+                        <Route exact path="/detail" component={CardDetailView}/>
                         <Route exact path="/sampleReduxComponent" component={HelloWorldComponent}/>
                     </div>
                 </Router>

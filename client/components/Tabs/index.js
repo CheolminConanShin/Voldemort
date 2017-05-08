@@ -7,7 +7,7 @@ const styles = {
         paddingTop: '17vw',
         paddingLeft: '4.2vw',
         paddingRight: '4.2vw',
-        marginBottom: '50px',
+        marginBottom: '2vh',
         boxShadow: '0px -1vw 4vw 2vw lightgrey'
     },
     underLine: {

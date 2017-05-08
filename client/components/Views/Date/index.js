@@ -3,9 +3,9 @@ import React from 'react'
 const styles = {
     container: {
         textAlign: 'center',
-        fontSize: '30px',
+        fontSize: '3vh',
         color: '#777777',
-        marginBottom: '40px'
+        marginBottom: '2vh'
     }
 }
 

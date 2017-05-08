@@ -14,7 +14,7 @@ export default class Navbar extends React.Component {
     render() {
         return (
             <div style={styles.size}>
-                <Header/>
+                <Header title="볼드모트"/>
             </div>
         )
     }

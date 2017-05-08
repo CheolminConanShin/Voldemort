@@ -11,10 +11,10 @@ const styles = {
     }
 }
 
-export default class LeftDrawer extends React.Component {
+export default class ArrowBack extends React.Component {
     render() {
         return (
-            <img style={Object.assign({}, styles.position, styles.size)} src="./images/menu.svg"/>
+            <img style={Object.assign({}, styles.position, styles.size)} src="./images/arrow_back.svg"/>
         )
     }
 }
