@@ -7,7 +7,8 @@ const styles = {
         boxShadow: '0px 1vw 4vw 0px lightgrey',
     },
     cardName: {
-        fontSize: '4.5vw'
+        fontSize: '4.5vw',
+        textAlign: 'left'
     },
     money: {
         fontSize: '5vw',
@@ -37,7 +38,8 @@ const styles = {
     },
     date: {
         fontSize: '4vw',
-        color: '#777777'
+        color: '#777777',
+        textAlign: 'left'
     }
 }
 
