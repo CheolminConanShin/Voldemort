@@ -3,10 +3,11 @@ import Tab from './Tab'
 
 const styles = {
     size: {
-        height: '18.75%',
-        marginTop: '8%',
+        paddingTop: '50px',
         paddingLeft: '4.2vw',
         paddingRight: '4.2vw',
+        marginBottom: '50px',
+        boxShadow: '0px 40px 4vw 0px lightgrey'
     },
     underLine: {
         width: '30%',
@@ -19,32 +20,37 @@ export default class Tabs extends React.Component {
     constructor(props) {
         super(props)
 
-        this.resetTabs = this.resetTabs.bind(this)
+        this.changeTabIndex = this.props.changeTabIndex
+        this.setTabActive = this.setTabActive.bind(this)
     }
 
     render() {
         return (
             <div style={styles.size}>
-                <Tab ref="tab1" index="1" text="사용중" width="25.5vw" clickHandler={this.resetTabs} classes='tabOne active'/>
-                <Tab ref="tab2" index="2" text="유지" width="33.7vw" clickHandler={this.resetTabs} classes='tabTwo'/>
-                <Tab ref="tab3" index="3" text="신규가능" width="25.5vw" clickHandler={this.resetTabs} classes='tabThree'/>
+                <Tab ref="tab1" index={0} text="사용중" width="25.5vw" clickHandler={this.changeTabIndex} classes='tabOne active'/>
+                <Tab ref="tab2" index={1} text="유지" width="33.7vw" clickHandler={this.changeTabIndex} classes='tabTwo'/>
+                <Tab ref="tab3" index={2} text="신규가능" width="25.5vw" clickHandler={this.changeTabIndex} classes='tabThree'/>
                 <hr style={styles.underLine}/>
             </div>
         )
     }
 
-    resetTabs(index) {
+    componentDidUpdate() {
+        this.setTabActive(this.props.currentIndex)
+    }
+
+    setTabActive(index) {
         this.refs.tab1.state.classes = 'tabOne'
         this.refs.tab2.state.classes = 'tabTwo'
         this.refs.tab3.state.classes = 'tabThree'
         switch(index) {
-            case "1":
+            case 0:
                 this.refs.tab1.state.classes = 'tabOne active'
                 break;
-            case "2":
+            case 1:
                 this.refs.tab2.state.classes = 'tabTwo active'
                 break;
-            case "3":
+            case 2:
                 this.refs.tab3.state.classes = 'tabThree active'
                 break;
         }
