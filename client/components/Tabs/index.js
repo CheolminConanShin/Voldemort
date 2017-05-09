@@ -3,11 +3,12 @@ import Tab from './Tab'
 
 const styles = {
     size: {
-        paddingTop: '50px',
+        position: 'relative',
+        paddingTop: '17vw',
         paddingLeft: '4.2vw',
         paddingRight: '4.2vw',
         marginBottom: '50px',
-        boxShadow: '0px 40px 4vw 0px lightgrey'
+        boxShadow: '0px -1vw 4vw 2vw lightgrey'
     },
     underLine: {
         width: '30%',

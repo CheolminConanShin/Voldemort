@@ -3,6 +3,8 @@ import Header from './Header'
 
 const styles = {
     size: {
+        position: 'fixed',
+        width: '100%',
         height: "10vw",
         paddingTop: "20px",
     }
