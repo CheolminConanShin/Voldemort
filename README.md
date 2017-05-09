@@ -7,16 +7,17 @@ React Web Template
 
 cordova create <path> --template <react_project_path>
 
-- to test (with jest)<br>
+- to run unit test (with jest)<br>
 npm test
 
-- to generate dist source<br>
+- to generate deploy source<br>
 npm run dist
 
-- to run web server (hot deploy)<br>
-npm start
-
-- to run dev mode (hot deploy into distribution directory)<br>
+- to run dev server (hot deploy)<br>
 npm run dev
 
-yes!
+- to generate deploy source and host using firebase server<br>
+npm run host
+
+- to run e2e test using testcafe<br>
+npm run e2e
