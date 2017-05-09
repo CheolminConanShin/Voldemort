@@ -1,6 +1,4 @@
 import React from 'react'
-import LeftDrawer from '../LeftDrawer'
-import ArrowBack from "../LeftDrawer/ArrowBack";
 
 const styles = {
     title: {
@@ -19,18 +17,7 @@ export default class Header extends React.Component {
         return (
             <div style={styles.header}>
                 <div style={styles.title}>{this.props.title}</div>
-                {this.renderDrawer()}
             </div>
         )
-    }
-
-    renderDrawer() {
-        if(this.props.arrow){
-            if(this.props.arrow == 'back'){
-                return <ArrowBack/>
-            }
-        }else{
-            return <LeftDrawer/>
-        }
     }
 }

@@ -1,10 +1,16 @@
 import React from 'react'
 
 const styles = {
-    view: {
-        margin: '10vw 18vw',
+    size: {
+        position: 'relative',
         fontSize: '1.7vh',
-        color: '#777777'
+        color: '#777777',
+        paddingTop: '18vw',
+        paddingLeft: '18vw',
+        paddingRight: '18vw',
+        paddingBottom: '10vw',
+        marginBottom: '2vh',
+        boxShadow: '0px -1vw 4vw 2vw lightgrey'
     },
     card: {
         width: '30vw',
@@ -38,7 +44,7 @@ const styles = {
 export default class CardInfo extends React.Component {
     render() {
         return (
-            <div style={styles.view}>
+            <div style={styles.size}>
                 <img style={Object.assign({}, styles.card, styles.fl)} src="./images/card.svg"/>
                 <div style={Object.assign({width: '34vw', paddingTop:'1vh'}, styles.fl)}>
                     <div style={styles.columnLabel}>

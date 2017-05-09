@@ -1,11 +1,13 @@
 import React from 'react'
-import Cardbar from "../Navbar/Cardbar";
+import Navbar from "../Navbar/index";
+import CardInfo from "../CardInfo/index";
 
 export default class CardDetailView extends React.Component {
     render() {
         return (
             <div>
-                <Cardbar/>
+                <Navbar title="KB국민 파인테크(1*2*)" arrow="back"/>
+                <CardInfo/>
             </div>
         )
     }

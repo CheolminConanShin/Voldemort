@@ -20,7 +20,7 @@ export default class CardUsageTrackView extends React.Component {
     render() {
         return (
             <div>
-                <Navbar/>
+                <Navbar title="볼드모트"/>
                 <Tabs ref="tabs" currentIndex={this.state.currentIndex} changeTabIndex={this.changeTabIndex}/>
                 <ViewPager tag="main">
                     <Frame className="frame">

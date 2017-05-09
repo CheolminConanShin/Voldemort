@@ -1,5 +1,7 @@
 import React from 'react'
 import Header from './Header'
+import ArrowBack from "../LeftDrawer/ArrowBack";
+import LeftDrawer from "../LeftDrawer/index";
 
 const styles = {
     size: {
@@ -14,8 +16,19 @@ export default class Navbar extends React.Component {
     render() {
         return (
             <div style={styles.size}>
-                <Header title="볼드모트"/>
+                {this.renderDrawer()}
+                <Header title={this.props.title}/>
             </div>
         )
+    }
+
+    renderDrawer() {
+        if(this.props.arrow){
+            if(this.props.arrow == 'back'){
+                return <ArrowBack/>
+            }
+        }else{
+            return <LeftDrawer/>
+        }
     }
 }
