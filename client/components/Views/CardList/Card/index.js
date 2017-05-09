@@ -36,11 +36,33 @@ const styles = {
         width: '100%',
         borderTop: '3px solid #d8d8d8'
     },
-    date: {
+    depositDate: {
         fontSize: '4vw',
         color: '#777777',
         textAlign: 'left'
-    }
+    },
+    cancel: {
+        fontSize: '5vw',
+        fontWeight: 'bold',
+        color: '#f37979',
+        textAlign: 'right',
+    },
+    call: {
+        width: '30%',
+        fontSize: '3.5vw',
+        color: '#f37979',
+        textAlign: 'center',
+        border: '3px solid',
+        borderRadius: '100px',
+        marginTop: '3%',
+        marginLeft: '73%',
+        padding: '22px'
+    },
+    cancelableDate: {
+        fontSize: '2.7vw',
+        color: '#777777',
+        textAlign: 'right'
+    },
 }
 
 export class ProgressCard extends React.Component {
@@ -72,8 +94,44 @@ export class SatisfiedCard extends React.Component {
                     달성
                 </div>
                 <hr style={styles.underLine}/>
-                <div style={styles.date}>
+                <div style={styles.depositDate}>
                     05.17 입금 예정
+                </div>
+            </div>
+        )
+    }
+}
+
+export class CancelableCard extends React.Component {
+    render() {
+        return (
+            <div style={styles.container}>
+                <div style={styles.cardName}>
+                    {this.props.cardName}
+                </div>
+                <div style={styles.cancel}>
+                    해지가능
+                </div>
+                <div style={styles.call}>
+                    전화하기
+                </div>
+            </div>
+        )
+    }
+}
+
+export class UncancelableCard extends React.Component {
+    render() {
+        return (
+            <div style={styles.container}>
+                <div style={styles.cardName}>
+                    {this.props.cardName}
+                </div>
+                <div style={styles.satisfied}>
+                    {this.props.dDay}
+                </div>
+                <div style={styles.cancelableDate}>
+                    {this.props.cancelableDate}
                 </div>
             </div>
         )

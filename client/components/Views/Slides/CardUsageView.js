@@ -1,7 +1,7 @@
 import React from 'react'
 import {View} from 'react-view-pager'
 import Date from '../Date'
-import CardList from '../CardList'
+import {UsageCardList} from '../CardList'
 
 const styles = {
     container: {
@@ -23,7 +23,7 @@ export default class CardUsageView extends React.Component {
         return (
             <View style={styles.container} className="view">
                 <Date/>
-                <CardList/>
+                <UsageCardList/>
                 <button style={styles.newCardButton}>카드 추가</button>
             </View>
         )
