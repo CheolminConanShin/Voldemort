@@ -2,7 +2,7 @@ import React from "react";
 import {Provider} from 'react-redux';
 import {BrowserRouter as Router, Route} from "react-router-dom";
 import HelloWorldComponent from "./HelloWorld";
-import CardUsageTrackView from './Views/CardUsageTrackView'
+import CardMainView from './Views/CardMainView'
 import store from "../store"
 export default class App extends React.Component {
     render() {
@@ -10,7 +10,7 @@ export default class App extends React.Component {
             <Provider store={store}>
                 <Router>
                     <div style={{height: "100%"}}>
-                        <Route exact path="/" component={CardUsageTrackView}/>
+                        <Route exact path="/" component={CardMainView}/>
                         <Route exact path="/sampleReduxComponent" component={HelloWorldComponent}/>
                     </div>
                 </Router>
