@@ -6,6 +6,7 @@ import Tabs from '../Tabs'
 import CardUsageView from './Slides/CardUsageView'
 import CardKeepView from './Slides/CardKeepView'
 import NewCardView from './Slides/NewCardView'
+import Calculator from './Calculator/calculator'
 
 import FirebaseConnector from '../../actions/firebase'
 
@@ -18,7 +19,8 @@ export default class CardUsageTrackView extends React.Component {
             cardInfo: {
                 used: 0,
                 limit: 0
-            }
+            },
+            calculatorOn: true
         }
         this.changeTabIndex = this.changeTabIndex.bind(this)
     }
@@ -26,24 +28,29 @@ export default class CardUsageTrackView extends React.Component {
     render() {
         return (
             <div>
-                <Navbar title="볼드모트"/>
-                <Tabs ref="tabs" currentIndex={this.state.currentIndex} changeTabIndex={this.changeTabIndex}/>
-                <ViewPager tag="main">
-                    <Frame className="frame">
-                        <Track
-                            ref={c => this.track = c}
-                            viewsToShow={1}
-                            currentView={this.state.currentIndex}
-                            className="track"
-                            onViewChange={currentIndicies => {
-                                this.setState({ currentIndex: currentIndicies[0] })
-                            }}>
-                            <CardUsageView cardInfo={this.state.cardInfo}/>
-                            <CardKeepView/>
-                            <NewCardView/>
-                        </Track>
-                    </Frame>
-                </ViewPager>
+                <div>
+                    <Navbar title="볼드모트"/>
+                    <Tabs ref="tabs" currentIndex={this.state.currentIndex} changeTabIndex={this.changeTabIndex}/>
+                    <ViewPager tag="main">
+                        <Frame className="frame">
+                            <Track
+                                ref={c => this.track = c}
+                                viewsToShow={1}
+                                currentView={this.state.currentIndex}
+                                className="track"
+                                onViewChange={currentIndicies => {
+                                    this.setState({ currentIndex: currentIndicies[0] })
+                                }}>
+                                <CardUsageView cardInfo={this.state.cardInfo}/>
+                                <CardKeepView/>
+                                <NewCardView/>
+                            </Track>
+                        </Frame>
+                    </ViewPager>
+                </div>
+                <div>
+                    {this.state.calculatorOn ? <Calculator/> : null}
+                </div>
             </div>
         )
     }
