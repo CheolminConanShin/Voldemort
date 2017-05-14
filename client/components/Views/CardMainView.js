@@ -7,12 +7,18 @@ import CardUsageView from './Slides/CardUsageView'
 import CardKeepView from './Slides/CardKeepView'
 import NewCardView from './Slides/NewCardView'
 
+import FirebaseConnector from '../../actions/firebase'
+
 
 export default class CardUsageTrackView extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            currentIndex: 0
+            currentIndex: 0,
+            cardInfo: {
+                used: 0,
+                limit: 0
+            }
         }
         this.changeTabIndex = this.changeTabIndex.bind(this)
     }
@@ -32,7 +38,7 @@ export default class CardUsageTrackView extends React.Component {
                             onViewChange={currentIndicies => {
                                 this.setState({ currentIndex: currentIndicies[0] })
                             }}>
-                            <CardUsageView/>
+                            <CardUsageView cardInfo={this.state.cardInfo}/>
                             <CardKeepView/>
                             <NewCardView/>
                         </Track>
@@ -45,6 +51,19 @@ export default class CardUsageTrackView extends React.Component {
     changeTabIndex(index) {
         this.setState({
             currentIndex: index
+        })
+    }
+
+    componentDidMount() {
+        const me = this
+        FirebaseConnector.ref('userId_1/cardNumber_1').once('value', snapshot => {
+            const data = snapshot.val()
+            me.setState({
+                cardInfo: {
+                    used: data.used,
+                    limit: data.limit
+                }
+            })
         })
     }
 }

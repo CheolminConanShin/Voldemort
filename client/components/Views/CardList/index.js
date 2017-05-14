@@ -3,9 +3,20 @@ import {ProgressCard, SatisfiedCard, CancelableCard, UncancelableCard, NewCardIn
 
 export class UsageCardList extends React.Component {
     render() {
+        const leftAmount = this.props.cardUsage.limit - this.props.cardUsage.used
+        const leftManwon = parseInt(leftAmount / 10000)
+        const leftCheonwon = parseInt(leftAmount % 10000 / 1000)
+        const leftBaekwon = parseInt(leftAmount % 1000 / 100)
+
+        const manwonString = leftManwon > 0 ? " " + leftManwon + "만" : ""
+        const cheonwonString = leftCheonwon > 0 ? " " + leftCheonwon + "천" : ""
+        const baekwonString = leftBaekwon > 0 ? " " + leftBaekwon + "백" : ""
+
+
+        const amountString = manwonString + cheonwonString + baekwonString + "원 부족"
         return (
             <div>
-                <ProgressCard cardName="국민 XXXX" money="12만 6천원 부족"/>
+                <ProgressCard cardName="국민 XXXX" money={amountString}/>
                 <SatisfiedCard cardName="국민 XXXX"/>
             </div>
         )
