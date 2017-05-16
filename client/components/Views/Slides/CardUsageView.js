@@ -23,7 +23,7 @@ export default class CardUsageView extends React.Component {
         return (
             <View style={styles.container} className="view">
                 <Date/>
-                <UsageCardList cardUsage={this.props.cardInfo}/>
+                <UsageCardList cardInfo={this.props.cardInfo} openCalculator={this.props.openCalculator}/>
                 <button style={styles.newCardButton}>카드 추가</button>
             </View>
         )

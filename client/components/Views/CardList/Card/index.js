@@ -67,15 +67,28 @@ const styles = {
 
 export class ProgressCard extends React.Component {
     render() {
+        const {used, total} = this.props.cardInfo
+
+        const leftAmount = total - used
+        const leftManwon = parseInt(leftAmount / 10000)
+        const leftCheonwon = parseInt(leftAmount % 10000 / 1000)
+        const leftBaekwon = parseInt(leftAmount % 1000 / 100)
+
+        const manwonString = leftManwon > 0 ? " " + leftManwon + "만" : ""
+        const cheonwonString = leftCheonwon > 0 ? " " + leftCheonwon + "천" : ""
+        const baekwonString = leftBaekwon > 0 ? " " + leftBaekwon + "백" : ""
+
+        const amountString = manwonString + cheonwonString + baekwonString + "원 부족"
+
         return (
             <div style={styles.container}>
                 <div style={styles.cardName}>
                     {this.props.cardName}
                 </div>
                 <div style={styles.money}>
-                    {this.props.money}
+                    {amountString}
                 </div>
-                <div style={styles.addSpend}>
+                <div onClick={() => this.props.openCalculator(used, total)} style={styles.addSpend}>
                     사용금액 추가
                 </div>
             </div>

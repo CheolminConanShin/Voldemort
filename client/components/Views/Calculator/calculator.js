@@ -1,4 +1,7 @@
 import React from 'react'
+import UsageField from './usageField'
+
+import FirebaseConnector from '../../../actions/firebase'
 
 const styles = {
     container: {
@@ -21,54 +24,120 @@ const styles = {
     },
     calculateBox: {
         padding: '0px 40px',
-        backgroundColor: '#E3E3E3',
+        backgroundColor: '#f8f8f8',
         color: '#989898',
         fontSize: '60px',
         lineHeight: '11vh',
         border: '3px solid rgb(152, 152, 152)'
     },
-    inputBox: {
-        display: 'inline-block',
-        width: '35%'
+    buttons: {
+        backgroundColor: 'white',
+        width: '25vw',
+        height: '11.3vh',
+        fontSize: '50px',
+        border: '2px solid rgb(152, 152, 152)',
+        textAlign: 'center'
     },
-    numbers: {
-        backgroundColor: '#E3E3E3',
-        width: '25%',
-        display: 'inline-block',
-        padding: '3.9vh',
-        fontSize: '40px',
-        border: '2px solid rgb(152, 152, 152)'
+    eraseArrow: {
+        width: '9vw'
+    },
+    empty: {
+        backgroundColor: '#bcbcbc',
+        width: '25vw',
+        height: '11.3vh',
+        border: '2px solid rgb(152, 152, 152)',
+    },
+    enter: {
+        backgroundColor: '#7984f3',
+        color: 'white',
+        fontSize: '50px',
+        textAlign: 'center'
     }
 }
 
+const formatNumber = (number) => {
+    return [number.slice(0,number.length-3), ',', number.slice(-3)].join('')
+}
+
 export default class Calculator extends React.Component {
+    constructor(props) {
+        super(props)
+
+        this.state = {
+            cardName: '국민 XXXX',
+            total: this.props.cardInfo.total + "",
+            used: this.props.cardInfo.used + ""
+        }
+
+        this.buttonHandler = this.buttonHandler.bind(this)
+        this.eraseHandler = this.eraseHandler.bind(this)
+        this.saveHandler = this.saveHandler.bind(this)
+    }
+
+    buttonHandler(event) {
+        let number = event.target.innerHTML;
+        this.refs.usage.setState({
+            usage: this.refs.usage.state.usage + number
+        })
+    }
+
+    eraseHandler() {
+        this.refs.usage.setState({
+            usage: this.refs.usage.state.usage.slice(0, -1)
+        })
+    }
+
+    saveHandler() {
+        const usage = this.refs.usage.state.usage == '' ? 0 : this.refs.usage.state.usage
+        const sumUsedAmount = parseInt(this.state.used) + parseInt(usage);
+
+        this.setState({
+            used: sumUsedAmount
+        })
+        FirebaseConnector.ref('userId_1/cardNumber_1').update({
+            'used' : sumUsedAmount
+        })
+        this.props.closeCalculator()
+    }
+
     render() {
+        const subTotal = (this.state.total - this.state.used) + ""
+
         return (
             <div style={styles.container}>
                 <div style={styles.cardInfo}>
-                    <span>국민 XXXX</span><span style={styles.goal}>실적 300,000</span>
+                    <span>{this.state.cardName}</span><span style={styles.goal}>실적 {formatNumber(this.state.total)}</span>
                 </div>
                 <div style={styles.calculateBox}>
-                    <span>234,000 + </span><span style={styles.inputBox}></span><span> = 234,000</span>
+                    <span>{formatNumber(subTotal)} + </span><UsageField ref="usage" usage={''}/><span> = {formatNumber(subTotal)}</span>
                 </div>
-                <div>
-                    <div style={styles.numbers}>1</div>
-                    <div style={styles.numbers}>2</div>
-                    <div style={styles.numbers}>3</div>
-                    <div style={styles.numbers}>지우기</div>
-                    <div style={styles.numbers}>4</div>
-                    <div style={styles.numbers}>5</div>
-                    <div style={styles.numbers}>6</div>
-                    <div style={styles.numbers}>+/-</div>
-                    <div style={styles.numbers}>7</div>
-                    <div style={styles.numbers}>8</div>
-                    <div style={styles.numbers}>9</div>
-                    <div style={styles.numbers}>완료</div>
-                    <div style={styles.numbers}>""</div>
-                    <div style={styles.numbers}>0</div>
-                    <div style={styles.numbers}>""</div>
-                    <div style={styles.numbers}>완료</div>
-                </div>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td onClick={this.buttonHandler} style={styles.buttons}>1</td>
+                            <td onClick={this.buttonHandler} style={styles.buttons}>2</td>
+                            <td onClick={this.buttonHandler} style={styles.buttons}>3</td>
+                            <td onClick={this.eraseHandler} style={styles.buttons}><img style={styles.eraseArrow} src="./images/shape.svg"/></td>
+                        </tr>
+                        <tr>
+                            <td onClick={this.buttonHandler} style={styles.buttons}>4</td>
+                            <td onClick={this.buttonHandler} style={styles.buttons}>5</td>
+                            <td onClick={this.buttonHandler} style={styles.buttons}>6</td>
+                            <td style={styles.buttons}>+/-</td>
+                        </tr>
+                        <tr>
+                            <td onClick={this.buttonHandler} style={styles.buttons}>7</td>
+                            <td onClick={this.buttonHandler} style={styles.buttons}>8</td>
+                            <td onClick={this.buttonHandler} style={styles.buttons}>9</td>
+                            <td onClick={this.saveHandler} style={styles.enter} rowSpan="2">완료</td>
+                        </tr>
+                        <tr>
+                            <td style={styles.empty}></td>
+                            <td onClick={this.buttonHandler} style={styles.buttons}>0</td>
+                            <td style={styles.empty}></td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         )
     }

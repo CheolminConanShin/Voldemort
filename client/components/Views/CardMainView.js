@@ -18,11 +18,15 @@ export default class CardUsageTrackView extends React.Component {
             currentIndex: 0,
             cardInfo: {
                 used: 0,
-                limit: 0
+                total: 0
             },
-            calculatorOn: true
+            calculatorOn: false
         }
+
+        this.database = FirebaseConnector.ref('userId_1/cardNumber_1')
         this.changeTabIndex = this.changeTabIndex.bind(this)
+        this.openCalculator = this.openCalculator.bind(this)
+        this.closeCalculator = this.closeCalculator.bind(this)
     }
 
     render() {
@@ -41,7 +45,7 @@ export default class CardUsageTrackView extends React.Component {
                                 onViewChange={currentIndicies => {
                                     this.setState({ currentIndex: currentIndicies[0] })
                                 }}>
-                                <CardUsageView cardInfo={this.state.cardInfo}/>
+                                <CardUsageView cardInfo={this.state.cardInfo} openCalculator={this.openCalculator}/>
                                 <CardKeepView/>
                                 <NewCardView/>
                             </Track>
@@ -49,10 +53,26 @@ export default class CardUsageTrackView extends React.Component {
                     </ViewPager>
                 </div>
                 <div>
-                    {this.state.calculatorOn ? <Calculator/> : null}
+                    {this.state.calculatorOn ? <Calculator cardInfo={this.state.cardInfo} closeCalculator={this.closeCalculator} /> : null}
                 </div>
             </div>
         )
+    }
+
+    openCalculator(used, total) {
+        this.setState({
+            cardInfo: {
+                used: used,
+                total: total
+            },
+            calculatorOn: true
+        })
+    }
+
+    closeCalculator() {
+        this.setState({
+            calculatorOn: false
+        })
     }
 
     changeTabIndex(index) {
@@ -63,12 +83,12 @@ export default class CardUsageTrackView extends React.Component {
 
     componentDidMount() {
         const me = this
-        FirebaseConnector.ref('userId_1/cardNumber_1').once('value', snapshot => {
+        this.database.on('value', snapshot => {
             const data = snapshot.val()
             me.setState({
                 cardInfo: {
                     used: data.used,
-                    limit: data.limit
+                    total: data.total
                 }
             })
         })
