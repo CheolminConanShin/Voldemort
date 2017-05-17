@@ -31,7 +31,6 @@
     "redux-mock-store": "^1.2.2",
     "style-loader": "^0.16.1",
     "sw-precache": "^5.1.0",
-    "testcafe": "^0.14.0",
     "url-loader": "^0.5.8",
     "webpack": "^2.3.3",
     "webpack-dev-server": "^2.4.2",
@@ -43,7 +42,6 @@
     "dist": "sw-precache --config=sw-precache-config.js | webpack",
     "host": "npm run dist && firebase deploy",
     "test": "jest",
-    "e2e": "testcafe chrome __e2e__"
   },
   "author": "",
   "license": "ISC",
