@@ -10,7 +10,7 @@ import CardKeepView from '../../components/Views/Slides/CardKeepView'
 import NewCardView from '../../components/Views/Slides/NewCardView'
 
 
-class DumbSlides extends React.Component {
+class Slides extends React.Component {
     render() {
         return (
             <div>
@@ -50,4 +50,4 @@ const dispatchToPros = (dispatch) => {
     }
 }
 
-export default connect(mapStatesToProps, dispatchToPros)(DumbSlides)
+export default connect(mapStatesToProps, dispatchToPros)(Slides)

@@ -6,7 +6,7 @@ import { connect } from 'react-redux'
 
 import DumbSlides from '../../dumb/slides/slides'
 
-class SmartSlides extends React.Component {
+class Slides extends React.Component {
     constructor(props) {
         super(props)
 
@@ -32,4 +32,4 @@ const dispatchToProps = (dispatch) => {
     }
 }
 
-export default connect(null, dispatchToProps)(SmartSlides)
+export default connect(null, dispatchToProps)(Slides)
