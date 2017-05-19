@@ -5,7 +5,6 @@ const initialState = {
 }
 
 export const slidesReducer = (state = initialState, action) => {
-    console.log(state)
     switch (action.type) {
         case(types.SET_CURRENT_SLIDE_INDEX):
             return Object.assign({}, state, {
