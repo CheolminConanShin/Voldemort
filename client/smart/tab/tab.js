@@ -37,7 +37,6 @@ class Tab extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-    console.log(state)
     return {
         currentIndex: state.slidesReducer.currentIndex
     }

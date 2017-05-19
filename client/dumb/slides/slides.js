@@ -1,13 +1,14 @@
 import React from 'react'
-import {ViewPager, Frame, Track} from 'react-view-pager'
+import { setCurrentSlideIndex } from '../../actions/slideAction'
+import { connect } from 'react-redux'
 
+import {ViewPager, Frame, Track} from 'react-view-pager'
 import NavigationBar from '../navigationbar/navigationbar'
 import Tabs from '../tabs/tabs'
 import CardUsageView from '../../components/Views/Slides/CardUsageView'
 import CardKeepView from '../../components/Views/Slides/CardKeepView'
 import NewCardView from '../../components/Views/Slides/NewCardView'
 
-import { connect } from 'react-redux'
 
 class DumbSlides extends React.Component {
     render() {
@@ -20,12 +21,12 @@ class DumbSlides extends React.Component {
                         <Track
                             ref={c => this.track = c}
                             viewsToShow={1}
-                            currentView={this.state.currentIndex}
+                            currentView={this.props.slideCurrentIndex-1}
                             className="track"
                             onViewChange={currentIndicies => {
-                                this.setState({ currentIndex: currentIndicies[0] })
+                                this.props.setCurrentIndex(currentIndicies[0]+1)
                             }}>
-                            <CardUsageView cardInfo={this.state.cardInfo} openCalculator={this.openCalculator}/>
+                            <CardUsageView cardInfo={this.props.cardInfo} openCalculator={this.openCalculator}/>
                             <CardKeepView/>
                             <NewCardView/>
                         </Track>
@@ -43,4 +44,10 @@ const mapStatesToProps = (state) => {
     }
 }
 
-export default connect(mapStatesToProps)(DumbSlides)
+const dispatchToPros = (dispatch) => {
+    return {
+        setCurrentIndex: (index) => dispatch(setCurrentSlideIndex(index))
+    }
+}
+
+export default connect(mapStatesToProps, dispatchToPros)(DumbSlides)
