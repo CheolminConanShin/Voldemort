@@ -3,7 +3,7 @@ import { setCurrentSlideIndex } from '../../actions/slideAction'
 import { connect } from 'react-redux'
 
 import {ViewPager, Frame, Track} from 'react-view-pager'
-import NavigationBar from '../navigationbar/navigationbarPresenter'
+import NavigationBar from '../navigationBar/navigationBarPresenter'
 import Tabs from '../tabs/tabsPresenter'
 import CardUsageView from '../../componentsOld/Views/Slides/CardUsageView'
 import CardKeepView from '../../componentsOld/Views/Slides/CardKeepView'

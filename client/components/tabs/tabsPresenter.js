@@ -1,5 +1,5 @@
 import React from 'react'
-import Tab from './tabContainer'
+import Tab from './tab/tabContainer'
 
 const styles = {
     size: {

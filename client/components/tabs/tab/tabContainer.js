@@ -1,5 +1,5 @@
 import React from 'react'
-import { setCurrentSlideIndex } from '../../actions/slideAction'
+import { setCurrentSlideIndex } from '../../../actions/slideAction'
 import { connect } from 'react-redux'
 
 const styles = {
