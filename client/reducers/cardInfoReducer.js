@@ -7,7 +7,7 @@ const initialState = {
     }
 }
 
-export const cardInfoReducer = (state = initialState, action) => {
+const cardInfoReducer = (state = initialState, action) => {
     switch (action.type) {
         case(types.UPDATE_CARD_INFO):
             return Object.assign({}, state, {
@@ -16,4 +16,6 @@ export const cardInfoReducer = (state = initialState, action) => {
         default:
             return state
     }
-};
+}
+
+export default cardInfoReducer

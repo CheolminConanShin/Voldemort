@@ -16,7 +16,7 @@ export default class Header extends React.Component {
     render() {
         return (
             <div style={styles.header}>
-                <div style={styles.title}>{this.props.title}</div>
+                <div id="header-title" style={styles.title}>{this.props.title}</div>
             </div>
         )
     }

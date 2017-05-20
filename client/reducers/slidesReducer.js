@@ -4,7 +4,7 @@ const initialState = {
     currentIndex: 1
 }
 
-export const slidesReducer = (state = initialState, action) => {
+const slidesReducer = (state = initialState, action) => {
     switch (action.type) {
         case(types.SET_CURRENT_SLIDE_INDEX):
             return Object.assign({}, state, {
@@ -24,4 +24,6 @@ export const slidesReducer = (state = initialState, action) => {
         default:
             return state;
     }
-};
+}
+
+export default slidesReducer

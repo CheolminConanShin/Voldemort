@@ -1,6 +1,6 @@
 import { createStore, combineReducers } from 'redux'
-import { cardInfoReducer } from '../reducers/cardInfoReducer'
-import { slidesReducer } from '../reducers/slidesReducer'
+import cardInfoReducer from '../reducers/cardInfoReducer'
+import slidesReducer from '../reducers/slidesReducer'
 
 const reducer = combineReducers({
     cardInfoReducer,
