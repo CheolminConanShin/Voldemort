@@ -41,7 +41,7 @@
     "prod": "sw-precache --config=sw-precache-config.js | webpack-dev-server --colors --hot --config webpack.config.prod.js",
     "dist": "sw-precache --config=sw-precache-config.js | webpack",
     "host": "npm run dist && firebase deploy",
-    "test": "jest",
+    "test": "jest"
   },
   "author": "",
   "license": "ISC",
