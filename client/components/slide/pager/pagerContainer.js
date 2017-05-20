@@ -20,7 +20,7 @@ class Pager extends React.Component {
                         onViewChange={currentIndex => {
                             this.props.setCurrentIndex(currentIndex[0] + 1)
                         }}>
-                        <CardUsagePage cardInfo={this.props.cardInfo} openCalculator={this.openCalculator}/>
+                        <CardUsagePage openCalculator={this.openCalculator}/>
                         <CardKeepView/>
                         <NewCardView/>
                     </Track>
@@ -32,7 +32,6 @@ class Pager extends React.Component {
 
 const mapStatesToProps = (state) => {
     return {
-        cardInfo: state.cardInfoReducer.cardInfo,
         slideCurrentIndex: state.slidesReducer.currentIndex
     }
 }

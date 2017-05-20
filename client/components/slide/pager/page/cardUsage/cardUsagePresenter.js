@@ -1,4 +1,5 @@
 import React from 'react'
+import {connect} from 'react-redux'
 import {View} from 'react-view-pager'
 import Date from './dateField'
 import {UsageCardList} from '../../../../../componentsOld/Views/CardList'
@@ -18,7 +19,7 @@ const styles = {
     }
 }
 
-export default class CardUsagePagePresenter extends React.Component {
+class CardUsagePagePresenter extends React.Component {
     render() {
         return (
             <View style={styles.container} className="view">
@@ -29,3 +30,11 @@ export default class CardUsagePagePresenter extends React.Component {
         )
     }
 }
+
+const mapStatesToProps = (state) => {
+    return {
+        cardInfo: state.cardInfoReducer.cardInfo,
+    }
+}
+
+export default connect(mapStatesToProps)(CardUsagePagePresenter)
