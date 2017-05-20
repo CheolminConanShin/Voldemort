@@ -6,15 +6,3 @@ export function setCurrentSlideIndex(index) {
         currentIndex: index
     }
 }
-
-export function nextSlideIndex() {
-    return {
-        type: types.NEXT_SLIDE
-    }
-}
-
-export function prevSlideIndex() {
-    return {
-        type: types.PREV_SLIDE
-    }
-}

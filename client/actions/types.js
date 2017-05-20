@@ -1,5 +1,3 @@
 export const SET_CURRENT_SLIDE_INDEX = 'SET_CURRENT_SLIDE_INDEX'
-export const NEXT_SLIDE = 'NEXT_SLIDE'
-export const PREV_SLIDE = 'PREV_SLIDE'
 
 export const UPDATE_CARD_INFO = 'UPDATE_CARD_INFO'
