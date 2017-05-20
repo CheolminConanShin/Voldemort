@@ -3,9 +3,9 @@ import { connect } from 'react-redux'
 import { setCurrentSlideIndex } from '../../../actions/slideAction'
 
 import {ViewPager, Frame, Track} from 'react-view-pager'
-import CardUsagePage from './page/cardUsage'
-import CardKeepView from './page/finishedCardCancel'
-import NewCardView from './page/registerNewCard'
+import CardUsagePage from './page/cardUsage/cardUsage'
+import CardKeepView from './page/finishedCardCancel/finishedCardCancel'
+import NewCardView from './page/registerNewCard/registerNewCard'
 
 class Pager extends React.Component {
     render() {

@@ -1,7 +1,7 @@
 import React from 'react'
 import {View} from 'react-view-pager'
 import Date from './dateField'
-import {UsageCardList} from '../../../../componentsOld/Views/CardList'
+import {UsageCardList} from '../../../../../componentsOld/Views/CardList'
 
 const styles = {
     container: {
