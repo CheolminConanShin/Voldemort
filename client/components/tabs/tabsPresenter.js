@@ -17,7 +17,7 @@ const styles = {
     }
 }
 
-export default class Tabs extends React.Component {
+export default class TabsPresenter extends React.Component {
     render() {
         return (
             <div style={styles.size}>

@@ -3,7 +3,7 @@ import NavigationBar from "../navigationBar/navigationBarPresenter";
 import Tabs from "../tabs/tabsPresenter";
 import Pager from "./pager/pagerContainer";
 
-export default class Slides extends React.Component {
+export default class SlidePresenter extends React.Component {
     render() {
         return (
             <div>

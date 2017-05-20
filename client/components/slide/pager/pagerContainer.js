@@ -7,7 +7,7 @@ import CardUsagePage from './page/cardUsage/cardUsagePresenter'
 import FinishedCardCancelPage from './page/finishedCardCancel/finishedCardCancelPresenter'
 import NewCardView from './page/registerNewCard/registerNewCardPresenter'
 
-class Pager extends React.Component {
+class PagerContainer extends React.Component {
     render() {
         return (
             <ViewPager tag="main">
@@ -42,4 +42,4 @@ const dispatchToPros = (dispatch) => {
     }
 }
 
-export default connect(mapStatesToProps, dispatchToPros)(Pager)
+export default connect(mapStatesToProps, dispatchToPros)(PagerContainer)

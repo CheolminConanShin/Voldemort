@@ -15,7 +15,7 @@ const styles = {
     }
 }
 
-class Tab extends React.Component {
+class TabContainer extends React.Component {
     constructor(props) {
         super(props)
         this.clickHandler = this.clickHandler.bind(this)
@@ -48,4 +48,4 @@ const dispatchToProps = (dispatch) => {
     }
 }
 
-export default connect(mapStateToProps, dispatchToProps)(Tab)
+export default connect(mapStateToProps, dispatchToProps)(TabContainer)

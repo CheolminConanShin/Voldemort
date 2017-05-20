@@ -4,9 +4,9 @@ import { updateCardInfo } from '../../actions/cardInfoAction'
 import { connect } from 'react-redux'
 
 
-import DumbSlides from './slidePresenter'
+import SlidePresenter from './slidePresenter'
 
-class Slides extends React.Component {
+class SlideContainer extends React.Component {
     constructor(props) {
         super(props)
 
@@ -19,7 +19,7 @@ class Slides extends React.Component {
 
     render() {
         return(
-            <DumbSlides/>
+            <SlidePresenter/>
         )
     }
 }
@@ -32,4 +32,4 @@ const dispatchToProps = (dispatch) => {
     }
 }
 
-export default connect(null, dispatchToProps)(Slides)
+export default connect(null, dispatchToProps)(SlideContainer)
