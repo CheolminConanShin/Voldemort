@@ -3,9 +3,9 @@ import {ViewPager, Frame, Track, View} from 'react-view-pager'
 import Navbar from '../Navbar'
 import Tabs from '../Tabs'
 
-import CardUsageView from './Slides/CardUsageView'
-import CardKeepView from './Slides/CardKeepView'
-import NewCardView from './Slides/NewCardView'
+import CardUsageView from '../../components/slide/pager/page/cardUsage'
+import CardKeepView from '../../components/slide/pager/page/finishedCardCancel'
+import NewCardView from '../../components/slide/pager/page/registerNewCard'
 import Calculator from './Calculator/calculator'
 
 import FirebaseConnector from '../../actions/firebase'
@@ -45,7 +45,7 @@ export default class CardUsageTrackView extends React.Component {
                                 onViewChange={currentIndicies => {
                                     this.setState({ currentIndex: currentIndicies[0] })
                                 }}>
-                                <CardUsageView cardInfo={this.state.cardInfo} openCalculator={this.openCalculator}/>
+                                <CardUsagePage cardInfo={this.state.cardInfo} openCalculator={this.openCalculator}/>
                                 <CardKeepView/>
                                 <NewCardView/>
                             </Track>

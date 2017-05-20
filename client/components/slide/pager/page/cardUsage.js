@@ -1,7 +1,7 @@
 import React from 'react'
 import {View} from 'react-view-pager'
-import Date from '../Date'
-import {UsageCardList} from '../CardList'
+import Date from './dateField'
+import {UsageCardList} from '../../../../componentsOld/Views/CardList'
 
 const styles = {
     container: {
@@ -18,7 +18,7 @@ const styles = {
     }
 }
 
-export default class CardUsageView extends React.Component {
+export default class CardUsagePagePresenter extends React.Component {
     render() {
         return (
             <View style={styles.container} className="view">
