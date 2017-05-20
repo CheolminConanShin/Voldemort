@@ -3,7 +3,7 @@ import {ViewPager, Frame, Track, View} from 'react-view-pager'
 import Navbar from '../Navbar'
 import Tabs from '../Tabs'
 
-import CardUsageView from '../../components/slide/pager/page/cardUsage/cardUsage'
+import CardUsageView from '../../components/slide/pager/page/cardUsage/cardUsagePresenter'
 import CardKeepView from '../../components/slide/pager/page/finishedCardCancel/finishedCardCancel'
 import NewCardView from '../../components/slide/pager/page/registerNewCard/registerNewCard'
 import Calculator from './Calculator/calculator'
