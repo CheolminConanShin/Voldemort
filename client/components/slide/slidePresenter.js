@@ -3,11 +3,11 @@ import { setCurrentSlideIndex } from '../../actions/slideAction'
 import { connect } from 'react-redux'
 
 import {ViewPager, Frame, Track} from 'react-view-pager'
-import NavigationBar from '../navigationbar/navigationbar'
-import Tabs from '../tabs/tabs'
-import CardUsageView from '../../components/Views/Slides/CardUsageView'
-import CardKeepView from '../../components/Views/Slides/CardKeepView'
-import NewCardView from '../../components/Views/Slides/NewCardView'
+import NavigationBar from '../navigationbar/navigationbarPresenter'
+import Tabs from '../tabs/tabsPresenter'
+import CardUsageView from '../../componentsOld/Views/Slides/CardUsageView'
+import CardKeepView from '../../componentsOld/Views/Slides/CardKeepView'
+import NewCardView from '../../componentsOld/Views/Slides/NewCardView'
 
 
 class Slides extends React.Component {

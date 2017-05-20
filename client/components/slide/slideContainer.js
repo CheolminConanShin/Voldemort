@@ -4,7 +4,7 @@ import { updateCardInfo } from '../../actions/cardInfoAction'
 import { connect } from 'react-redux'
 
 
-import DumbSlides from '../../dumb/slides/slides'
+import DumbSlides from './slidePresenter'
 
 class Slides extends React.Component {
     constructor(props) {

@@ -1,7 +1,7 @@
 import React from 'react'
-import Header from './header'
-import ArrowBack from "../../components/LeftDrawer/ArrowBack";
-import LeftDrawer from "../../components/LeftDrawer/index";
+import Header from './headerPresenter'
+import ArrowBack from "../../componentsOld/LeftDrawer/ArrowBack";
+import LeftDrawer from "../../componentsOld/LeftDrawer/index";
 
 const styles = {
     size: {

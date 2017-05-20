@@ -2,7 +2,7 @@ import React from "react";
 import {Provider} from 'react-redux';
 import {BrowserRouter as Router, Route} from "react-router-dom";
 
-import SmartSlides from '../smart/slides/slides'
+import SmartSlides from '../components/slide/slideContainer'
 import CardDetailView from "./Views/CardDetailView";
 import store from "../store"
 
