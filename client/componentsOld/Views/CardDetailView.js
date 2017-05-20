@@ -1,5 +1,5 @@
 import React from 'react'
-import Navbar from "../Navbar/index";
+import Navbar from "../../components/navigationBar/navigationBarPresenter";
 import CardInfo from "../CardInfo/index";
 
 export default class CardDetailView extends React.Component {

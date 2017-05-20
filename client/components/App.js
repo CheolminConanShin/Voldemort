@@ -2,8 +2,8 @@ import React from "react";
 import {Provider} from 'react-redux';
 import {BrowserRouter as Router, Route} from "react-router-dom";
 
-import SmartSlides from '../components/slide/slideContainer'
-import CardDetailView from "./Views/CardDetailView";
+import SmartSlides from './slide/slideContainer'
+import CardDetailView from "../componentsOld/Views/CardDetailView";
 import store from "../store"
 
 export default class App extends React.Component {
