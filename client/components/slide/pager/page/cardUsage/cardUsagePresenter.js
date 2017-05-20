@@ -2,7 +2,7 @@ import React from 'react'
 import {connect} from 'react-redux'
 import {View} from 'react-view-pager'
 import Date from './dateField'
-import {UsageCardList} from '../../../../../componentsOld/Views/CardList'
+import CardList from './cardList'
 
 const styles = {
     container: {
@@ -19,12 +19,12 @@ const styles = {
     }
 }
 
-class CardUsagePagePresenter extends React.Component {
+class CardUsagePresenter extends React.Component {
     render() {
         return (
             <View style={styles.container} className="view">
                 <Date/>
-                <UsageCardList cardInfo={this.props.cardInfo} openCalculator={this.props.openCalculator}/>
+                <CardList cardInfo={this.props.cardInfo} openCalculator={this.props.openCalculator}/>
                 <button style={styles.newCardButton}>카드 추가</button>
             </View>
         )
@@ -37,4 +37,4 @@ const mapStatesToProps = (state) => {
     }
 }
 
-export default connect(mapStatesToProps)(CardUsagePagePresenter)
+export default connect(mapStatesToProps)(CardUsagePresenter)

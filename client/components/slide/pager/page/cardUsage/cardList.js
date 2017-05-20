@@ -2,7 +2,7 @@ import React from 'react'
 import ProgressCard from './progressCard'
 import SatisfiedCard from './satisfiedCard'
 
-export class UsageCardList extends React.Component {
+export default class CardList extends React.Component {
     render() {
         return (
             <div>

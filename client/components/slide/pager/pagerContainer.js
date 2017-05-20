@@ -4,8 +4,8 @@ import { setCurrentSlideIndex } from '../../../actions/slideAction'
 
 import {ViewPager, Frame, Track} from 'react-view-pager'
 import CardUsagePage from './page/cardUsage/cardUsagePresenter'
-import CardKeepView from './page/finishedCardCancel/finishedCardCancel'
-import NewCardView from './page/registerNewCard/registerNewCard'
+import FinishedCardCancelPage from './page/finishedCardCancel/finishedCardCancelPresenter'
+import NewCardView from './page/registerNewCard/registerNewCardPresenter'
 
 class Pager extends React.Component {
     render() {
@@ -21,7 +21,7 @@ class Pager extends React.Component {
                             this.props.setCurrentIndex(currentIndex[0] + 1)
                         }}>
                         <CardUsagePage openCalculator={this.openCalculator}/>
-                        <CardKeepView/>
+                        <FinishedCardCancelPage/>
                         <NewCardView/>
                     </Track>
                 </Frame>
