@@ -5,6 +5,7 @@ import {Provider} from "react-redux";
 
 import * as types from '../../../../client/actions/types'
 import PagerContainer from "../../../../client/components/slide/pager/pagerContainer";
+import CardUsagePresenter from '../../../../client/components/slide/pager/page/cardUsage/cardUsagePresenter'
 import {ViewPager} from 'react-view-pager'
 
 describe('<PagerContainer', () => {
@@ -23,6 +24,7 @@ describe('<PagerContainer', () => {
 
     const store = configureStore()(initialState)
     ViewPager.prototype['componentDidMount'] = jest.fn()
+    CardUsagePresenter.prototype['render'] = jest.fn()
     const renderedElement = mount(<Provider store={store}><PagerContainer/></Provider>)
 
     it('should display view pager components including ViewPager, Frame, and Track', () => {
@@ -33,7 +35,7 @@ describe('<PagerContainer', () => {
 
     it('should display track with three different pages(card usage, finished card cancel, new card)', () => {
         const track = renderedElement.find('Track')
-        expect(track.childAt(0).type().displayName).toContain('CardUsagePresenter')
+        expect(track.childAt(0).type().name).toEqual('CardUsagePresenter')
         expect(track.childAt(1).type().name).toEqual('FinishedCardCancelPresenter')
         expect(track.childAt(2).type().name).toEqual('RegisterNewCardPresenter')
     })
