@@ -1,8 +1,10 @@
 import React from 'react'
+import {connect} from 'react-redux'
+
 import ProgressCard from './progressCard'
 import SatisfiedCard from './satisfiedCard'
 
-export default class CardList extends React.Component {
+class CardList extends React.Component {
     render() {
         return (
             <div>
@@ -12,3 +14,11 @@ export default class CardList extends React.Component {
         )
     }
 }
+
+const mapStatesToProps = (state) => {
+    return {
+        cardInfo: state.cardInfoReducer.cardInfo,
+    }
+}
+
+export default connect(mapStatesToProps)(CardList)

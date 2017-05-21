@@ -19,22 +19,14 @@ const styles = {
     }
 }
 
-class CardUsagePresenter extends React.Component {
+export default class CardUsagePresenter extends React.Component {
     render() {
         return (
             <View style={styles.container} className="view">
                 <Date/>
-                <CardList cardInfo={this.props.cardInfo} openCalculator={this.props.openCalculator}/>
+                <CardList/>
                 <button style={styles.newCardButton}>카드 추가</button>
             </View>
         )
     }
 }
-
-const mapStatesToProps = (state) => {
-    return {
-        cardInfo: state.cardInfoReducer.cardInfo,
-    }
-}
-
-export default connect(mapStatesToProps)(CardUsagePresenter)
