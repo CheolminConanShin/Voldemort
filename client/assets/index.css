@@ -14,14 +14,14 @@ html, body, #root {
     color: #7984f3;
 }
 
-.tabOne.active ~ hr {
+.tab1.active ~ hr {
     margin-left: 0%;
 }
 
-.tabTwo.active ~ hr {
+.tab2.active ~ hr {
     margin-left: 35%;
 }
 
-.tabThree.active ~ hr {
+.tab3.active ~ hr {
     margin-left: 69%;
 }

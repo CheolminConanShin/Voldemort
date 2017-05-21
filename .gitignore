@@ -8,6 +8,9 @@ platforms/
 www/
 plugins/
 
+#test
+coverage/
+
 #IDE
 .idea
 **/*.iml
