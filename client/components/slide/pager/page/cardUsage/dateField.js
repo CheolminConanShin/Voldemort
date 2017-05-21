@@ -1,4 +1,5 @@
 import React from 'react'
+import Time from 'react-time'
 
 const styles = {
     container: {
@@ -9,11 +10,13 @@ const styles = {
     }
 }
 
+
 export default class Date extends React.Component{
     render() {
+        const today = new Date()
         return (
             <div style={styles.container}>
-                2017. 04
+                <Time value={today} format="YYYY.MM"/>
             </div>
         )
     }
