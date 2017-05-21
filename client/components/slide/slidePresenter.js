@@ -8,7 +8,7 @@ export default class SlidePresenter extends React.Component {
         return (
             <div>
                 <NavigationBar title="볼드모트"/>
-                <Tabs currentIndex={this.props.slideCurrentIndex}/>
+                <Tabs/>
                 <Pager/>
             </div>
         )
