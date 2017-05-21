@@ -11,7 +11,7 @@ const styles = {
 }
 
 
-export default class Date extends React.Component{
+export default class DateField extends React.Component{
     render() {
         const today = new Date()
         return (

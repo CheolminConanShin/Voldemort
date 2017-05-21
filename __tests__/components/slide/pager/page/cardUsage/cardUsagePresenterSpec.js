@@ -7,7 +7,7 @@ describe('<CardUsagePresenter/>', () => {
     const renderedElement = shallow(<CardUsagePresenter/>)
 
     it('should display date, card list, and add new card button', () => {
-        expect(renderedElement.find('Date').exists()).toBeTruthy()
+        expect(renderedElement.find('DateField').exists()).toBeTruthy()
         expect(renderedElement.childAt(1).type().displayName).toContain('CardList')
         expect(renderedElement.find('button').exists()).toBeTruthy()
     })
