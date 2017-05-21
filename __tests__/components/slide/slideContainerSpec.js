@@ -1,10 +1,10 @@
 import React from "react";
 import {mount} from "enzyme";
-import {stubComponent} from "../../../__mocks__/stubComponent";
+import {stubComponent} from "../../__mocks__/stubComponent";
 import configureStore from "redux-mock-store";
 import {Provider} from "react-redux";
-import SlideContainer from "../../../../client/components/slide/slideContainer";
-import SlidePresenter from "../../../../client/components/slide/slidePresenter";
+import SlideContainer from "../../../client/components/slide/slideContainer";
+import SlidePresenter from "../../../client/components/slide/slidePresenter";
 
 describe('<SlideContainer/>', () => {
     stubComponent(SlidePresenter)
