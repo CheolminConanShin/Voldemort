@@ -1,7 +1,7 @@
 import React from 'react'
 import Navbar from "../../components/navigationBar/navigationBarPresenter";
-import CardInfo from "../CardInfo/index";
-import Timeline from "../Timeline/index";
+import CardInfo from "../CardInfo";
+import Timeline from "../../components/Timeline";
 
 export default class CardDetailView extends React.Component {
     render() {
