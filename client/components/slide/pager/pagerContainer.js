@@ -3,9 +3,9 @@ import { connect } from 'react-redux'
 import { setCurrentSlideIndex } from '../../../actions/slideAction'
 
 import {ViewPager, Frame, Track} from 'react-view-pager'
-import CardUsagePage from './page/cardUsage/cardUsagePresenter'
-import FinishedCardCancelPage from './page/finishedCardCancel/finishedCardCancelPresenter'
-import NewCardView from './page/registerNewCard/registerNewCardPresenter'
+import CardUsagePresenter from './page/cardUsage/cardUsagePresenter'
+import FinishedCardCancelPresenter from './page/finishedCardCancel/finishedCardCancelPresenter'
+import RegisterNewCardPresenter from './page/registerNewCard/registerNewCardPresenter'
 
 class PagerContainer extends React.Component {
     render() {
@@ -20,9 +20,9 @@ class PagerContainer extends React.Component {
                         onViewChange={currentIndex => {
                             this.props.setCurrentIndex(currentIndex[0] + 1)
                         }}>
-                        <CardUsagePage openCalculator={this.openCalculator}/>
-                        <FinishedCardCancelPage/>
-                        <NewCardView/>
+                        <CardUsagePresenter openCalculator={this.openCalculator}/>
+                        <FinishedCardCancelPresenter/>
+                        <RegisterNewCardPresenter/>
                     </Track>
                 </Frame>
             </ViewPager>
