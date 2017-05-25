@@ -32,17 +32,8 @@ const styles = {
 export default class ProgressCard extends React.Component {
     render() {
         const {used, total} = this.props.cardInfo
-
-        const leftAmount = total - used
-        const leftManwon = parseInt(leftAmount / 10000)
-        const leftCheonwon = parseInt(leftAmount % 10000 / 1000)
-        const leftBaekwon = parseInt(leftAmount % 1000 / 100)
-
-        const manwonString = leftManwon > 0 ? " " + leftManwon + "만" : ""
-        const cheonwonString = leftCheonwon > 0 ? " " + leftCheonwon + "천" : ""
-        const baekwonString = leftBaekwon > 0 ? " " + leftBaekwon + "백" : ""
-
-        const amountString = manwonString + cheonwonString + baekwonString + "원 부족"
+        const leftAmount = this.getLeftAmount(total, used);
+        const leftAmountString = this.leftAmountToString(leftAmount);
 
         return (
             <div style={styles.container}>
@@ -50,12 +41,30 @@ export default class ProgressCard extends React.Component {
                     {this.props.cardName}
                 </div>
                 <div style={styles.money}>
-                    {amountString}
+                    {leftAmountString}
                 </div>
                 <div onClick={() => this.props.openCalculator(used, total)} style={styles.addSpend}>
                     사용금액 추가
                 </div>
             </div>
         )
+    }
+
+    leftAmountToString(leftAmount) {
+        let oneMillionLeft = leftAmount.leftManwon > 0 ? " " + leftAmount.leftManwon + "만" : "";
+        let oneThousandLeft = leftAmount.leftCheonwon > 0 ? " " + leftAmount.leftCheonwon + "천" : "";
+        let oneHundredLeft = leftAmount.leftBaekwon > 0 ? " " + leftAmount.leftBaekwon + "백" : "";
+
+        console.log(oneMillionLeft + oneThousandLeft + oneHundredLeft + "원 부족")
+        return oneMillionLeft + oneThousandLeft + oneHundredLeft + "원 부족"
+    }
+
+    getLeftAmount(total, used) {
+        const leftAmount = total - used
+        const leftManwon = parseInt(leftAmount / 10000)
+        const leftCheonwon = parseInt(leftAmount % 10000 / 1000)
+        const leftBaekwon = parseInt(leftAmount % 1000 / 100)
+
+        return {leftManwon, leftCheonwon, leftBaekwon}
     }
 }
