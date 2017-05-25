@@ -9,7 +9,7 @@ class CardList extends React.Component {
         return (
             <div>
                 <ProgressCard cardName="국민 XXXX" cardInfo={this.props.cardInfo} openCalculator={this.props.openCalculator}/>
-                <SatisfiedCard cardName="국민 XXXX"/>
+                <SatisfiedCard cardName="국민 XXXX" depositDate="05.17"/>
             </div>
         )
     }

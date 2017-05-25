@@ -38,7 +38,7 @@ export default class SatisfiedCard extends React.Component {
                 </div>
                 <hr style={styles.underLine}/>
                 <div style={styles.depositDate}>
-                    05.17 입금 예정
+                    {this.props.depositDate} 입금 예정
                 </div>
             </div>
         )
