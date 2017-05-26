@@ -55,14 +55,14 @@ export default class NewCard extends React.Component {
                 {this.props.ppCard ? <img style={styles.pp} src="./images/ico_pp.png"/> : undefined}
                 <div>
                     <div style={styles.subTitle}>연회비</div>
-                    <div style={styles.subTitle}>{this.props.annualFee}</div>
+                    <div className="annualFeeField" style={styles.subTitle}>{this.props.annualFee}</div>
                 </div>
                 <div>
                     <div style={styles.subTitle}>바우처</div>
-                    <div style={styles.subTitle}>{this.props.voucher}</div>
+                    <div className="voucherField" style={styles.subTitle}>{this.props.voucher}</div>
                 </div>
                 <div>
-                    <div style={styles.planner}><b>{this.props.numberOfPlanner}명</b>의 설계사 대기중</div>
+                    <div className="plannerField" style={styles.planner}><b>{this.props.numberOfPlanner}명</b>의 설계사 대기중</div>
                     <div style={styles.receiveInfo}>정보 받기</div>
                 </div>
             </div>
