@@ -10,11 +10,15 @@ describe('<SatisfiedCard/>', () => {
         depositDate: '02.26'
     }
 
-    const renderedElement = shallow('<SatisfiedCard cardName={initialState.cardName} depositDate={initialState.depositDate}/>')
+    const renderedElement = shallow(<SatisfiedCard cardName={initialState.cardName} depositDate={initialState.depositDate}/>)
     it('should display card name and satisfied string and deposit date', () => {
         const cardNameField = renderedElement.childAt(0)
-        const satisfiedString = renderedElement.childAt(1)
-        const depositeDate = renderedElement.childAt(2)
         expect(cardNameField.text()).toEqual("코난의 카드")
+
+        const satisfiedStringField = renderedElement.childAt(1)
+        expect(satisfiedStringField.text()).toEqual("달성")
+
+        const depositeDate = renderedElement.childAt(3)
+        expect(depositeDate.text()).toContain("02.26")
     })
 })
