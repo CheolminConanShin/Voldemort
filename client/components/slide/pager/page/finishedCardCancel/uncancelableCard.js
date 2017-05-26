@@ -30,10 +30,10 @@ export default class UncancelableCard extends React.Component {
                     {this.props.cardName}
                 </div>
                 <div style={styles.dday}>
-                    {this.props.dDay}
+                    {this.props.dDay} 일 남음
                 </div>
                 <div style={styles.cancelableDate}>
-                    {this.props.cancelableDate}
+                    해지가능일 : {this.props.cancelableDate}
                 </div>
             </div>
         )
