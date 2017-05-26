@@ -9,7 +9,7 @@ describe('<DateField/>', () => {
     it('should display todays year and month', () => {
         const currentYear = new Date().getFullYear()
         const currentMonth = new Date().getMonth()+1
-        expect(renderedElement.find('Time').prop('value').toString()).toContain(currentYear)
-        expect(renderedElement.find('Time').prop('value').toString()).toContain(currentMonth)
+        expect(renderedElement.find('Time').prop('value').getFullYear()).toBe(currentYear)
+        expect(renderedElement.find('Time').prop('value').getMonth()+1).toBe(currentMonth)
     })
 })
