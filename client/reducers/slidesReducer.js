@@ -10,17 +10,6 @@ const slidesReducer = (state = initialState, action) => {
             return Object.assign({}, state, {
                 currentIndex: action.currentIndex
             })
-
-        case(types.NEXT_SLIDE):
-            return Object.assign({}, state, {
-                currentIndex: state.currentIndex + 1
-            })
-
-        case(types.PREV_SLIDE):
-            return Object.assign({}, state, {
-                currentIndex: state.currentIndex - 1
-            })
-
         default:
             return state;
     }
