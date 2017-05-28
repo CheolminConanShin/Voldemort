@@ -3,7 +3,7 @@ import {mount} from 'enzyme'
 import {Provider} from 'react-redux'
 import configureStore from "redux-mock-store";
 
-import CardList from '../../../../../../client/components/slide/pager/page/cardUsage/cardList'
+import CardList from '../../../../../../client/components/slide/pager/page/cardUsage/cardListContainer'
 
 describe('<CardList/> for card usage page', () => {
     const initialState = {

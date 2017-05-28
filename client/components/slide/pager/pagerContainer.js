@@ -7,7 +7,20 @@ import CardUsagePresenter from './page/cardUsage/cardUsagePresenter'
 import FinishedCardCancelPresenter from './page/finishedCardCancel/finishedCardCancelPresenter'
 import RegisterNewCardPresenter from './page/registerNewCard/registerNewCardPresenter'
 
-class PagerContainer extends React.Component {
+const mapStatesToProps = (state) => {
+    return {
+        slideCurrentIndex: state.slidesReducer.currentIndex
+    }
+}
+
+const dispatchToProps = (dispatch) => {
+    return {
+        setCurrentIndex: (index) => dispatch(setCurrentSlideIndex(index))
+    }
+}
+
+@connect(mapStatesToProps, dispatchToProps)
+export default class PagerContainer extends React.Component {
     render() {
         return (
             <ViewPager tag="main">
@@ -29,17 +42,3 @@ class PagerContainer extends React.Component {
         )
     }
 }
-
-const mapStatesToProps = (state) => {
-    return {
-        slideCurrentIndex: state.slidesReducer.currentIndex
-    }
-}
-
-const dispatchToPros = (dispatch) => {
-    return {
-        setCurrentIndex: (index) => dispatch(setCurrentSlideIndex(index))
-    }
-}
-
-export default connect(mapStatesToProps, dispatchToPros)(PagerContainer)

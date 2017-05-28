@@ -4,7 +4,14 @@ import {connect} from 'react-redux'
 import ProgressCardContainer from './progressCardContainer'
 import SatisfiedCard from './satisfiedCard'
 
-class CardList extends React.Component {
+const mapStatesToProps = (state) => {
+    return {
+        cardInfo: state.cardInfoReducer.cardInfo,
+    }
+}
+
+@connect(mapStatesToProps)
+export default class CardListContainer extends React.Component {
     render() {
         return (
             <div>
@@ -14,11 +21,3 @@ class CardList extends React.Component {
         )
     }
 }
-
-const mapStatesToProps = (state) => {
-    return {
-        cardInfo: state.cardInfoReducer.cardInfo,
-    }
-}
-
-export default connect(mapStatesToProps)(CardList)

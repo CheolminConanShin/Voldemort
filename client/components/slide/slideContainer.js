@@ -3,10 +3,18 @@ import FirebaseConnector from '../../actions/firebase'
 import { updateCardInfo } from '../../actions/cardInfoAction'
 import { connect } from 'react-redux'
 
-
 import SlidePresenter from './slidePresenter'
 
-class SlideContainer extends React.Component {
+const dispatchToProps = (dispatch) => {
+    return {
+        updateCardInfo: (cardInfo) => {
+            dispatch(updateCardInfo(cardInfo))
+        }
+    }
+}
+
+@connect(null, dispatchToProps)
+export default class SlideContainer extends React.Component {
     constructor(props) {
         super(props)
 
@@ -23,13 +31,3 @@ class SlideContainer extends React.Component {
         )
     }
 }
-
-const dispatchToProps = (dispatch) => {
-    return {
-        updateCardInfo: (cardInfo) => {
-            dispatch(updateCardInfo(cardInfo))
-        }
-    }
-}
-
-export default connect(null, dispatchToProps)(SlideContainer)

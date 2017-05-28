@@ -3,7 +3,14 @@ import {connect} from 'react-redux'
 
 import ProgressCardPresenter from './progressCardPresenter'
 
-class ProgressCardContainer extends React.Component {
+const mapStatesToProps = (state) => {
+    return {
+        cardInfo: state.cardInfoReducer.cardInfo
+    }
+}
+
+@connect(mapStatesToProps)
+export default class ProgressCardContainer extends React.Component {
     render() {
         const {used, total} = this.props.cardInfo
         const leftAmount = this.getLeftAmount(total, used);
@@ -31,11 +38,3 @@ class ProgressCardContainer extends React.Component {
         return {leftManwon, leftCheonwon, leftBaekwon}
     }
 }
-
-const mapStatesToProps = (state) => {
-    return {
-        cardInfo: state.cardInfoReducer.cardInfo
-    }
-}
-
-export default connect(mapStatesToProps)(ProgressCardContainer)

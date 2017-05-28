@@ -4,7 +4,20 @@ import {connect} from "react-redux";
 
 import TabPresenter from "./tabPresenter";
 
-class TabContainer extends React.Component {
+const mapStateToProps = (state) => {
+    return {
+        currentIndex: state.slidesReducer.currentIndex
+    }
+}
+
+const dispatchToProps = (dispatch) => {
+    return {
+        setCurrentIndex: (index) => dispatch(setCurrentSlideIndex(index))
+    }
+}
+
+@connect(mapStateToProps, dispatchToProps)
+export default class TabContainer extends React.Component {
     constructor(props) {
         super(props)
 
@@ -23,17 +36,3 @@ class TabContainer extends React.Component {
         this.props.setCurrentIndex(this.props.index)
     }
 }
-
-const mapStateToProps = (state) => {
-    return {
-        currentIndex: state.slidesReducer.currentIndex
-    }
-}
-
-const dispatchToProps = (dispatch) => {
-    return {
-        setCurrentIndex: (index) => dispatch(setCurrentSlideIndex(index))
-    }
-}
-
-export default connect(mapStateToProps, dispatchToProps)(TabContainer)
