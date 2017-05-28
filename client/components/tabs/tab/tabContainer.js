@@ -5,12 +5,22 @@ import {connect} from "react-redux";
 import TabPresenter from "./tabPresenter";
 
 class TabContainer extends React.Component {
+    constructor(props) {
+        super(props)
+
+        this.setCurrentIndexHandler = this.setCurrentIndexHandler.bind(this)
+    }
+
     render() {
         const activeTabClass = this.props.index == this.props.currentIndex ? "active" : ""
         const classNames = "tab" + this.props.index + " " + activeTabClass
         return (
-            <TabPresenter classNames={classNames} {...this.props}/>
+            <TabPresenter classNames={classNames} {...this.props} changeIndex={this.setCurrentIndexHandler}/>
         )
+    }
+
+    setCurrentIndexHandler() {
+        this.props.setCurrentIndex(this.props.index)
     }
 }
 
@@ -22,7 +32,7 @@ const mapStateToProps = (state) => {
 
 const dispatchToProps = (dispatch) => {
     return {
-        setCurrentIndex: () => dispatch(setCurrentSlideIndex(this.props.index))
+        setCurrentIndex: (index) => dispatch(setCurrentSlideIndex(index))
     }
 }
 

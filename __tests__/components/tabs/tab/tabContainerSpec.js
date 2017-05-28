@@ -1,7 +1,7 @@
 import React from 'react'
-import {mount} from 'enzyme'
+import {shallow} from 'enzyme'
 import configureStore from "redux-mock-store";
-import {Provider} from "react-redux";
+import * as types from '../../../../client/actions/types'
 
 import TabContainer from '../../../../client/components/tabs/tab/tabContainer'
 import TabPresenter from '../../../../client/components/tabs/tab/tabPresenter'
@@ -20,23 +20,25 @@ describe('<TabContainer/>', () => {
 
 
     it('should display Tab presenter', () => {
-        const renderedElement = mount(<Provider store={store}><TabContainer index={UNNECESSARY_VALUE}/></Provider>)
+        const renderedElement = shallow(<TabContainer store={store} index={UNNECESSARY_VALUE}/>).shallow()
         expect(renderedElement.find('TabPresenter').exists()).toBeTruthy()
     })
 
     it('should pass active class to the tab with current index', () => {
         let currentIndex = initialState.slidesReducer.currentIndex;
-        const activeTabElement = mount(<Provider store={store}><TabContainer index={currentIndex}/></Provider>)
+        const activeTabElement = shallow(<TabContainer store={store} index={currentIndex}/>).shallow()
         expect(activeTabElement.find('TabPresenter').prop('classNames')).toContain('active')
     })
 
     it('should not pass active class to the tab that is not current index', () => {
         let notCurrentIndex = 2;
-        const nonActiveTabElement = mount(<Provider store={store}><TabContainer index={notCurrentIndex}/></Provider>)
+        const nonActiveTabElement = shallow(<TabContainer store={store} index={notCurrentIndex}/>).shallow()
         expect(nonActiveTabElement.find('TabPresenter').prop('classNames')).not.toContain('active')
     })
 
-    xit('should dispatch an action on set current index method call', () => {
-
+    it('should dispatch an action on set current index method call', () => {
+        const renderedElement = shallow(<TabContainer store={store} index={UNNECESSARY_VALUE}/>).shallow()
+        renderedElement.instance().props.setCurrentIndex()
+        expect(store.getActions()[0].type).toBe(types.SET_CURRENT_SLIDE_INDEX)
     })
 })
