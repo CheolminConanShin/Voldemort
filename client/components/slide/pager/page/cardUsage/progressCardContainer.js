@@ -1,5 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
+import * as CalculatorAction from '../../../../../actions/calculatorAction'
 
 import ProgressCardPresenter from './progressCardPresenter'
 
@@ -9,16 +10,32 @@ const mapStatesToProps = (state) => {
     }
 }
 
-@connect(mapStatesToProps)
+const mapDispatchToProp = (dispatch) => {
+    return {
+        toggleCalculator: () => dispatch(CalculatorAction.toggleCalculatorView())
+    }
+}
+
+@connect(mapStatesToProps, mapDispatchToProp)
 export default class ProgressCardContainer extends React.Component {
+    constructor(props) {
+        super(props)
+
+        this.toggleCalculator = this.toggleCalculator.bind(this)
+    }
+
     render() {
         const {used, total} = this.props.cardInfo
         const leftAmount = this.getLeftAmount(total, used);
         const leftAmountString = this.leftAmountToString(leftAmount);
 
         return (
-            <ProgressCardPresenter cardName={this.props.cardName} leftAmountString={leftAmountString}/>
+            <ProgressCardPresenter cardName={this.props.cardName} leftAmountString={leftAmountString} toggleCalculator={this.toggleCalculator}/>
         )
+    }
+
+    toggleCalculator() {
+        this.props.toggleCalculator(this.props.cardInfo)
     }
 
     leftAmountToString(leftAmount) {

@@ -39,7 +39,7 @@ export default class ProgressCardPresenter extends React.Component {
                 <div style={styles.money}>
                     {this.props.leftAmountString}
                 </div>
-                <div onClick={() => this.props.openCalculator(used, total)} style={styles.addSpend}>
+                <div onClick={this.props.toggleCalculator} style={styles.addSpend}>
                     사용금액 추가
                 </div>
             </div>
