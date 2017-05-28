@@ -1,8 +1,7 @@
-import React from 'react'
-import {connect} from 'react-redux'
-import {View} from 'react-view-pager'
-import DateField from './dateField'
-import CardList from './cardList'
+import React from "react";
+import {View} from "react-view-pager";
+import DateField from "./dateField";
+import CardList from "./cardList";
 
 const styles = {
     container: {

@@ -1,14 +1,14 @@
 import React from 'react'
 import {connect} from 'react-redux'
 
-import ProgressCard from './progressCard'
+import ProgressCardContainer from './progressCardContainer'
 import SatisfiedCard from './satisfiedCard'
 
 class CardList extends React.Component {
     render() {
         return (
             <div>
-                <ProgressCard cardName="국민 XXXX" cardInfo={this.props.cardInfo} openCalculator={this.props.openCalculator}/>
+                <ProgressCardContainer cardName="국민 XXXX" cardInfo={this.props.cardInfo} openCalculator={this.props.openCalculator}/>
                 <SatisfiedCard cardName="국민 XXXX" depositDate="05.17"/>
             </div>
         )
