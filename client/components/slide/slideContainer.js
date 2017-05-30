@@ -4,12 +4,11 @@ import { updateCardInfo } from '../../actions/cardInfoAction'
 import { connect } from 'react-redux'
 
 import SlidePresenter from './slidePresenter'
+import CalculatorContainer from '../../componentsOld/Views/Calculator/calculatorContainer'
 
 const dispatchToProps = (dispatch) => {
     return {
-        updateCardInfo: (cardInfo) => {
-            dispatch(updateCardInfo(cardInfo))
-        }
+        updateCardInfo: (cardInfo) => dispatch(updateCardInfo(cardInfo))
     }
 }
 
@@ -21,13 +20,19 @@ export default class SlideContainer extends React.Component {
         this.database = FirebaseConnector.ref('userId_1/cardNumber_1')
         this.database.on('value', snapshot => {
             const data = snapshot.val()
+            for(var cardId in data){
+                console.log(data[cardId])
+            }
             this.props.updateCardInfo(data)
         })
     }
 
     render() {
         return(
-            <SlidePresenter/>
+            <div>
+                <SlidePresenter/>
+                <CalculatorContainer/>
+            </div>
         )
     }
 }

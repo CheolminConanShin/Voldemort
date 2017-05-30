@@ -8,10 +8,7 @@ import ProgressCardContainer from '../../../../../../client/components/slide/pag
 describe('<ProgressCardContainer/>', () => {
     const initialState = {
         cardInfoReducer: {
-            cardInfo: {
-                used: '50000',
-                total: '100000'
-            }
+            cardInfo: {}
         }
     }
     const store = configureStore()(initialState)
@@ -37,8 +34,24 @@ describe('<ProgressCardContainer/>', () => {
         expect(progressCard.leftAmountToString(leftAmount)).toEqual(" 5만 5천 5백원 부족")
     })
 
-    it('should create calculator toggle action on show calculator method call', () => {
+    it('should create calculator toggle action on toggle calculator method call', () => {
         progressCard.props.toggleCalculator()
         expect(store.getActions()[0].type).toEqual(types.TOGGLE_CALCULATOR_VIEW)
+    })
+
+    it('should create calculator card data set action if toggle calculator method call is changing toggle value false => true', () => {
+        const initialState = {
+            cardInfoReducer: {
+                cardInfo: {}
+            },
+            calculatorReducer: {
+                toggle: false
+            }
+        }
+        const store = configureStore()(initialState)
+
+        const renderedElement = shallow(<ProgressCardContainer store={store}/>).shallow().instance()
+        renderedElement.props.toggleCalculator()
+        expect(store.getActions()[0].type).toEqual(types.CALCULATOR_CARD_DATA_SET)
     })
 })

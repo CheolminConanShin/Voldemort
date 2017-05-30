@@ -12,7 +12,7 @@ const mapStatesToProps = (state) => {
 
 const mapDispatchToProp = (dispatch) => {
     return {
-        toggleCalculator: () => dispatch(CalculatorAction.toggleCalculatorView())
+        toggleCalculator: (cardInfo) => dispatch(CalculatorAction.toggleCalculatorViewON(cardInfo))
     }
 }
 
