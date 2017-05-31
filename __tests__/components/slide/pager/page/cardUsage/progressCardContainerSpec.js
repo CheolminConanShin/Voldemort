@@ -35,11 +35,15 @@ describe('<ProgressCardContainer/>', () => {
     })
 
     it('should create calculator toggle action on toggle calculator method call', () => {
-        progressCard.props.toggleCalculator()
-        expect(store.getActions()[0].type).toEqual(types.TOGGLE_CALCULATOR_VIEW)
+        const cardInfo = {
+            total: '500000',
+            used: '10000'
+        }
+        progressCard.props.toggleCalculatorViewON(cardInfo)
+        expect(store.getActions()[0].type).toEqual(types.TOGGLE_CALCULATOR_VIEW_ON)
     })
 
-    it('should create calculator card data set action if toggle calculator method call is changing toggle value false => true', () => {
+    it('should set card data if toggle calculator on method is called', () => {
         const initialState = {
             cardInfoReducer: {
                 cardInfo: {}
@@ -51,7 +55,11 @@ describe('<ProgressCardContainer/>', () => {
         const store = configureStore()(initialState)
 
         const renderedElement = shallow(<ProgressCardContainer store={store}/>).shallow().instance()
-        renderedElement.props.toggleCalculator()
-        expect(store.getActions()[0].type).toEqual(types.CALCULATOR_CARD_DATA_SET)
+        const cardInfo = {
+            total: '500000',
+            used: '10000'
+        }
+        renderedElement.props.toggleCalculatorViewON(cardInfo)
+        expect(store.getActions()[0].cardInfo).toEqual(cardInfo)
     })
 })
