@@ -1,5 +1,11 @@
+@font-face {
+    font-family: Roboto;
+    src: url("./fonts/Roboto-Regular.ttf")
+}
+
 html, body, #root {
     height: 100%;
+    font-family: Roboto;
 }
 
 .tab::after {
