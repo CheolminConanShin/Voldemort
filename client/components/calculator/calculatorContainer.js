@@ -1,8 +1,8 @@
 import React from 'react'
 import {connect} from 'react-redux'
 
-import FirebaseConnector from "../../../actions/firebase";
-import * as CalculatorActions from '../../../actions/calculatorAction'
+import FirebaseConnector from "../../actions/firebase";
+import * as CalculatorActions from '../../actions/calculatorAction'
 import CalculatorPresenter from './calculatorPresenter'
 
 const mapStateToProp = (state) => {

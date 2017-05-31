@@ -4,7 +4,7 @@ import { updateCardInfo } from '../../actions/cardInfoAction'
 import { connect } from 'react-redux'
 
 import SlidePresenter from './slidePresenter'
-import CalculatorContainer from '../../componentsOld/Views/Calculator/calculatorContainer'
+import CalculatorContainer from '../calculator/calculatorContainer'
 
 const dispatchToProps = (dispatch) => {
     return {
