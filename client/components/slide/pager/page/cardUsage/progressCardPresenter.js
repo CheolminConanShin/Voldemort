@@ -17,7 +17,7 @@ const styles = {
         textAlign: 'right'
     },
     addSpend: {
-        width: '40%',
+        width: '34%',
         fontSize: '3.5vw',
         color: '#f37979',
         textAlign: 'center',
@@ -25,7 +25,7 @@ const styles = {
         borderRadius: '100px',
         marginTop: '3%',
         marginLeft: '60%',
-        padding: '1vw'
+        padding: '22px'
     }
 }
 
