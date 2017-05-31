@@ -12,7 +12,7 @@ const mapStatesToProps = (state) => {
 
 const mapDispatchToProp = (dispatch) => {
     return {
-        toggleCalculator: (cardInfo) => dispatch(CalculatorAction.toggleCalculatorViewON(cardInfo))
+        toggleCalculatorViewON: (cardInfo) => dispatch(CalculatorAction.toggleCalculatorViewON(cardInfo))
     }
 }
 
@@ -21,7 +21,7 @@ export default class ProgressCardContainer extends React.Component {
     constructor(props) {
         super(props)
 
-        this.toggleCalculator = this.toggleCalculator.bind(this)
+        this.toggleCalculatorViewON = this.toggleCalculatorViewON.bind(this)
     }
 
     render() {
@@ -30,12 +30,12 @@ export default class ProgressCardContainer extends React.Component {
         const leftAmountString = this.leftAmountToString(leftAmount);
 
         return (
-            <ProgressCardPresenter cardName={this.props.cardName} leftAmountString={leftAmountString} toggleCalculator={this.toggleCalculator}/>
+            <ProgressCardPresenter cardName={this.props.cardName} leftAmountString={leftAmountString} toggleCalculatorViewON={this.toggleCalculatorViewON}/>
         )
     }
 
-    toggleCalculator() {
-        this.props.toggleCalculator(this.props.cardInfo)
+    toggleCalculatorViewON() {
+        this.props.toggleCalculatorViewON(this.props.cardInfo)
     }
 
     leftAmountToString(leftAmount) {
