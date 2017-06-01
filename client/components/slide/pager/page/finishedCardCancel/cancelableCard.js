@@ -22,11 +22,11 @@ const styles = {
         fontSize: '3.5vw',
         color: '#f37979',
         textAlign: 'center',
-        border: '3px solid',
+        border: '1px solid',
         borderRadius: '100px',
         marginTop: '3%',
         marginLeft: '70%',
-        padding: '22px'
+        padding: '7px'
     }
 }
 
