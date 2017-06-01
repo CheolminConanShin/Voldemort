@@ -37,10 +37,10 @@ const styles = {
         fontSize: '3.5vw',
         color: '#7984f3',
         textAlign: 'center',
-        border: '3px solid',
+        border: '1px solid',
         borderRadius: '100px',
         marginTop: '11%',
-        padding: '22px',
+        padding: '7px',
         float: 'right'
     }
 }
