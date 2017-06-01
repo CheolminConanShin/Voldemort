@@ -13,10 +13,19 @@ const mapStatesToProps = (state) => {
 @connect(mapStatesToProps)
 export default class CardListContainer extends React.Component {
     render() {
+        let renderTags = [];
+        for(var key in this.props.cardInfo) {
+            var card = this.props.cardInfo[key]
+            if(card == "") continue
+            if(card.total <= card.used) {
+                renderTags.push(<SatisfiedCard key={key} cardInfo={card} />)
+            } else {
+                renderTags.push(<ProgressCardContainer key={key} cardInfo={card}/>)
+            }
+        }
         return (
             <div>
-                <ProgressCardContainer cardName="국민 XXXX" cardInfo={this.props.cardInfo} openCalculator={this.props.openCalculator}/>
-                <SatisfiedCard cardName="국민 XXXX" depositDate="05.17"/>
+                {renderTags}
             </div>
         )
     }

@@ -31,14 +31,14 @@ export default class SatisfiedCard extends React.Component {
         return (
             <div style={styles.container}>
                 <div style={styles.cardName}>
-                    {this.props.cardName}
+                    {this.props.cardInfo.name}
                 </div>
                 <div style={styles.satisfied}>
                     달성
                 </div>
                 <hr style={styles.underLine}/>
                 <div style={styles.depositDate}>
-                    {this.props.depositDate} 입금 예정
+                    {this.props.cardInfo.depositDate} 입금 예정
                 </div>
             </div>
         )

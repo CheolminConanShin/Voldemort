@@ -7,13 +7,11 @@ import ProgressCardContainer from '../../../../../../client/components/slide/pag
 
 describe('<ProgressCardContainer/>', () => {
     const initialState = {
-        cardInfoReducer: {
-            cardInfo: {}
-        }
+        cardInfo: {}
     }
     const store = configureStore()(initialState)
 
-    const renderedElement = shallow(<ProgressCardContainer store={store}/>).shallow()
+    const renderedElement = shallow(<ProgressCardContainer store={store} cardInfo={initialState.cardInfo}/>).shallow()
     const progressCard = renderedElement.instance()
 
     it('should return left amount object containing manwon, cheonwon, baekwon field on getLeftAmount method', () => {
@@ -54,7 +52,7 @@ describe('<ProgressCardContainer/>', () => {
         }
         const store = configureStore()(initialState)
 
-        const renderedElement = shallow(<ProgressCardContainer store={store}/>).shallow().instance()
+        const renderedElement = shallow(<ProgressCardContainer store={store} cardInfo={initialState.cardInfoReducer.cardInfo}/>).shallow().instance()
         const cardInfo = {
             total: '500000',
             used: '10000'

@@ -17,12 +17,9 @@ export default class SlideContainer extends React.Component {
     constructor(props) {
         super(props)
 
-        this.database = FirebaseConnector.ref('userId_1/cardNumber_1')
+        this.database = FirebaseConnector.ref('userId_1')
         this.database.on('value', snapshot => {
             const data = snapshot.val()
-            for(var cardId in data){
-                console.log(data[cardId])
-            }
             this.props.updateCardInfo(data)
         })
     }

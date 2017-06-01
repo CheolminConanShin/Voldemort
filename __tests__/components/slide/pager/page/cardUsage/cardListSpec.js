@@ -9,8 +9,14 @@ describe('<CardList/> for card usage page', () => {
     const initialState = {
         cardInfoReducer: {
             cardInfo: {
-                total: 'initial total',
-                used: 'initial used'
+                firstCard: {
+                    total: '30000',
+                    used: '10000'
+                },
+                secondCard: {
+                    total: '30000',
+                    used: '30000'
+                }
             }
         }
     }
@@ -18,7 +24,7 @@ describe('<CardList/> for card usage page', () => {
 
     const renderedElement = mount(<Provider store={store}><CardList/></Provider>)
 
-    it('should display some progress card and some satisfied card', () => {
+    it('should display one progress card and one satisfied card', () => {
         expect(renderedElement.find('ProgressCardContainer').exists()).toBeTruthy()
         expect(renderedElement.find('SatisfiedCard').exists()).toBeTruthy()
     })

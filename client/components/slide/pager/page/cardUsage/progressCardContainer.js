@@ -4,19 +4,13 @@ import * as CalculatorAction from '../../../../../actions/calculatorAction'
 
 import ProgressCardPresenter from './progressCardPresenter'
 
-const mapStatesToProps = (state) => {
-    return {
-        cardInfo: state.cardInfoReducer.cardInfo
-    }
-}
-
 const mapDispatchToProp = (dispatch) => {
     return {
         toggleCalculatorViewON: (cardInfo) => dispatch(CalculatorAction.toggleCalculatorViewON(cardInfo))
     }
 }
 
-@connect(mapStatesToProps, mapDispatchToProp)
+@connect(null, mapDispatchToProp)
 export default class ProgressCardContainer extends React.Component {
     constructor(props) {
         super(props)
@@ -30,7 +24,7 @@ export default class ProgressCardContainer extends React.Component {
         const leftAmountString = this.leftAmountToString(leftAmount);
 
         return (
-            <ProgressCardPresenter cardName={this.props.cardName} leftAmountString={leftAmountString} toggleCalculatorViewON={this.toggleCalculatorViewON}/>
+            <ProgressCardPresenter cardName={this.props.cardInfo.name} leftAmountString={leftAmountString} toggleCalculatorViewON={this.toggleCalculatorViewON}/>
         )
     }
 

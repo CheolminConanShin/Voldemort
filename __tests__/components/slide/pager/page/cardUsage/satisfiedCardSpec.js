@@ -6,11 +6,11 @@ import SatisfiedCard from '../../../../../../client/components/slide/pager/page/
 describe('<SatisfiedCard/>', () => {
 
     const initialState = {
-        cardName: "코난의 카드",
+        name: "코난의 카드",
         depositDate: '02.26'
     }
 
-    const renderedElement = shallow(<SatisfiedCard cardName={initialState.cardName} depositDate={initialState.depositDate}/>)
+    const renderedElement = shallow(<SatisfiedCard cardInfo={initialState}/>)
     it('should display card name and satisfied string and deposit date', () => {
         const cardNameField = renderedElement.childAt(0)
         expect(cardNameField.text()).toEqual("코난의 카드")
