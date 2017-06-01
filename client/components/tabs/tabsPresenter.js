@@ -22,7 +22,7 @@ export default class TabsPresenter extends React.Component {
         return (
             <div style={styles.size}>
                 <Tab index={1} text="사용중" width="25.1vw"/>
-                <Tab index={2} text="유지" width="32vw"/>
+                <Tab index={2} text="유지" width="34vw"/>
                 <Tab index={3} text="신규가능" width="25.1vw"/>
                 <hr style={styles.underLine}/>
             </div>
