@@ -6,6 +6,7 @@
 html, body, #root {
     height: 100%;
     font-family: Roboto;
+    margin: 0px;
 }
 
 .tab::after {

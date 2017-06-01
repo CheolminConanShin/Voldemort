@@ -13,7 +13,7 @@ const styles = {
     underLine: {
         width: '30%',
         transition: '.3s ease-in-out',
-        borderTop: '6px solid #7984f3'
+        borderTop: '2px solid #7984f3'
     }
 }
 

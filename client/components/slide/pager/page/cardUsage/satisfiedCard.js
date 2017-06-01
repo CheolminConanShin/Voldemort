@@ -17,7 +17,7 @@ const styles = {
     },
     underLine: {
         width: '100%',
-        borderTop: '3px solid #d8d8d8'
+        borderTop: '1px solid #d8d8d8'
     },
     depositDate: {
         fontSize: '4vw',

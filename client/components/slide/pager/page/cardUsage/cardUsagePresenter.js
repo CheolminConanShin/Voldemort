@@ -9,11 +9,11 @@ const styles = {
     },
     newCardButton: {
         color: '#777777',
-        fontSize: '4vw',
-        border: '3px solid #777777',
+        fontSize: '13px',
+        border: '1px solid #777777',
         borderRadius: '100px',
         backgroundColor: 'white',
-        padding: '25px 75px',
+        padding: '10px 28px',
         marginTop: '35px'
     }
 }
