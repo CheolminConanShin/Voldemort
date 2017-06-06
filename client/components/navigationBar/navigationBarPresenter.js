@@ -16,19 +16,9 @@ export default class NavigationBar extends React.Component {
     render() {
         return (
             <div style={styles.size}>
-                {this.renderDrawer()}
+                {this.props.arrow ? <ArrowBack/> : null}
                 <Header title={this.props.title}/>
             </div>
         )
-    }
-
-    renderDrawer() {
-        if(this.props.arrow){
-            if(this.props.arrow == 'back'){
-                return <ArrowBack/>
-            }
-        }else{
-            return <LeftDrawer/>
-        }
     }
 }
