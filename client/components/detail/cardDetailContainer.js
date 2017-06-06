@@ -12,7 +12,7 @@ const mapStateToProp = (state) => {
 export default class CardDetailContainer extends React.Component {
     render() {
         return (
-            <NavigationBar title={this.props.cardInfo.name}/>
+            <NavigationBar arrow title={this.props.cardInfo.name}/>
         )
     }
 }
