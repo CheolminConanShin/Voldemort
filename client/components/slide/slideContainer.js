@@ -28,7 +28,6 @@ export default class SlideContainer extends React.Component {
         return(
             <div>
                 <SlidePresenter/>
-                <CalculatorContainer/>
             </div>
         )
     }
