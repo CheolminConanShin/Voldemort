@@ -1,6 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import * as CalculatorAction from '../../../../../actions/calculatorAction'
+import history from '../../../../../components/history'
 
 import ProgressCardPresenter from './progressCardPresenter'
 
@@ -30,6 +31,8 @@ export default class ProgressCardContainer extends React.Component {
 
     toggleCalculatorViewON() {
         this.props.toggleCalculatorViewON(this.props.cardInfo)
+        history.push('/detail')
+
     }
 
     leftAmountToString(leftAmount) {
