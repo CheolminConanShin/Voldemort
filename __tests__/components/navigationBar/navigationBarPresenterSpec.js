@@ -13,9 +13,4 @@ describe('<NavigationBar/>', () => {
         const renderElement = shallow(<NavigationBar title="test title" arrow="back"/>)
         expect(renderElement.find('ArrowBack').exists()).toBeTruthy()
     })
-
-    it('should render left drawer hamburger button if it does not have arrow property', () => {
-        const renderElement = shallow(<NavigationBar title="test title"/>)
-        expect(renderElement.find('LeftDrawer').exists()).toBeTruthy()
-    })
 })

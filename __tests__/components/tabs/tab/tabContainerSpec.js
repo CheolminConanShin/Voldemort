@@ -30,10 +30,10 @@ describe('<TabContainer/>', () => {
         expect(activeTabElement.find('TabPresenter').prop('classNames')).toContain('active')
     })
 
-    it('should not pass active class to the tab that is not current index', () => {
+    it('should have inactive class to the tab that is not current index', () => {
         let notCurrentIndex = 2;
         const nonActiveTabElement = shallow(<TabContainer store={store} index={notCurrentIndex}/>).shallow()
-        expect(nonActiveTabElement.find('TabPresenter').prop('classNames')).not.toContain('active')
+        expect(nonActiveTabElement.find('TabPresenter').prop('classNames')).toContain('inactive')
     })
 
     it('should dispatch an action on set current index method call', () => {
