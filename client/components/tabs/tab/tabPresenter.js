@@ -8,8 +8,7 @@ const styles = {
     },
     font: {
         fontSize: '2vh',
-        textAlign: 'center',
-        color: '#1d1d1d'
+        textAlign: 'center'
     }
 }
 

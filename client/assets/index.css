@@ -7,6 +7,7 @@ html, body, #root {
     height: 100%;
     font-family: Roboto;
     margin: 0px;
+    color: #3f6072;
 }
 
 .tab::after {
@@ -15,10 +16,11 @@ html, body, #root {
     width: 0;
     height: 2px;
     background: #000;
+    color: #3f6072;
 }
 
-.active {
-    color: #7984f3;
+.inactive {
+    opacity: 0.6;
 }
 
 .tab1.active ~ hr {
