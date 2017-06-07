@@ -11,7 +11,8 @@ const styles = {
     },
     below: {
         zIndex: 1,
-        paddingTop: '100px'
+        paddingTop: '100px',
+        paddingBottom: '25px'
     }
 }
 
