@@ -7,17 +7,18 @@ const styles = {
         boxShadow: '0px 1vw 4vw 0px lightgrey',
     },
     cardName: {
-        fontSize: '4.5vw',
+        fontSize: '17px',
         textAlign: 'left'
     },
     dday: {
-        fontSize: '5vw',
-        color: '#7984f3',
+        fontSize: '20px',
+        color: '#f37979',
         textAlign: 'right'
     },
     cancelableDate: {
-        fontSize: '2.7vw',
+        fontSize: '12px',
         color: '#777777',
+        opacity: '0.6',
         textAlign: 'right'
     },
 }

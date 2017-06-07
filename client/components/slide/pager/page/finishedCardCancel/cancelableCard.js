@@ -7,11 +7,11 @@ const styles = {
         boxShadow: '0px 1vw 4vw 0px lightgrey',
     },
     cardName: {
-        fontSize: '4.5vw',
+        fontSize: '17px',
         textAlign: 'left'
     },
     cancel: {
-        fontSize: '5vw',
+        fontSize: '20px',
         fontWeight: 'bold',
         color: '#f37979',
         textAlign: 'right',
@@ -19,7 +19,7 @@ const styles = {
     },
     call: {
         width: '25%',
-        fontSize: '3.5vw',
+        fontSize: '13px',
         color: '#f37979',
         textAlign: 'center',
         border: '1px solid',

@@ -4,7 +4,7 @@ import Time from 'react-time'
 const styles = {
     container: {
         textAlign: 'center',
-        fontSize: '3vh',
+        fontSize: '14px',
         color: '#777777',
         marginBottom: '2vh'
     }

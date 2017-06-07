@@ -7,24 +7,25 @@ const styles = {
         boxShadow: '0px 1vw 4vw 0px lightgrey',
     },
     cardName: {
-        fontSize: '4.5vw',
+        fontSize: '17px',
         textAlign: 'left'
     },
     money: {
-        fontSize: '5vw',
+        fontSize: '20px',
         fontWeight: 'bold',
-        color: '#f37979',
+        color: '#7984f3',
         textAlign: 'right'
     },
     addSpend: {
-        width: '34%',
-        fontSize: '3.5vw',
-        color: '#f37979',
+        width: '30%',
+        fontSize: '12px',
+        color: 'rgba(255,255,255,0.7)',
+        background: '#7984f3',
         textAlign: 'center',
         border: '1px solid',
         borderRadius: '100px',
         marginTop: '3%',
-        marginLeft: '60%',
+        marginLeft: '66%',
         padding: '7px'
     }
 }

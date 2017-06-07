@@ -7,11 +7,11 @@ const styles = {
         boxShadow: '0px 1vw 4vw 0px lightgrey',
     },
     cardName: {
-        fontSize: '4.5vw',
+        fontSize: '17px',
         textAlign: 'left'
     },
     satisfied: {
-        fontSize: '5vw',
+        fontSize: '20px',
         color: '#7984f3',
         textAlign: 'right'
     },
@@ -20,8 +20,9 @@ const styles = {
         borderTop: '1px solid #d8d8d8'
     },
     depositDate: {
-        fontSize: '4vw',
-        color: '#777777',
+        fontSize: '12px',
+        color: '#758d9a',
+        opacity: '0.6',
         textAlign: 'left'
     }
 }

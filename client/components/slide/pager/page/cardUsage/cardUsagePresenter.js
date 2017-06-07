@@ -14,7 +14,7 @@ const styles = {
         borderRadius: '100px',
         backgroundColor: 'white',
         padding: '10px 28px',
-        marginTop: '35px'
+        marginTop: '14px'
     }
 }
 
