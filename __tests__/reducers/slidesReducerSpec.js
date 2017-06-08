@@ -2,13 +2,13 @@ import slidesReducer from '../../client/reducers/slidesReducer'
 import * as types from '../../client/actions/types'
 
 describe('Slides Reducer', () => {
-    it('should have initial state with current index equal to 1', () => {
+    it('should have initial state with current index equal to 0', () => {
         const action = {
             type: "UNKNOWN_ACTION"
         }
 
         const expectedInitialState = {
-            currentIndex: 1
+            currentIndex: 0
         }
 
         expect(slidesReducer(undefined, action)).toEqual(expectedInitialState)
