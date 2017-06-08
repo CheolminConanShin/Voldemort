@@ -14,7 +14,7 @@ describe('<SlidePresenter/>', () => {
     })
 
     it('should display tabs and pager', () => {
-        expect(renderedElement.find('TabsPresenter').exists()).toBeTruthy()
+        expect(renderedElement.find('TabsPresenterForSlider').exists()).toBeTruthy()
         expect(renderedElement.childAt(1).childAt(0).getNode().type.displayName).toContain('Pager')
     })
 })

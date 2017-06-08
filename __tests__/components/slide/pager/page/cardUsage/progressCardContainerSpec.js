@@ -41,7 +41,7 @@ describe('<ProgressCardContainer/>', () => {
         expect(store.getActions()[0].type).toEqual(types.TOGGLE_CALCULATOR_VIEW_ON)
     })
 
-    it('should set card data if toggle calculator on method is called', () => {
+    it('should set card data if toggleCalculatorON method is called', () => {
         const initialState = {
             cardInfoReducer: {
                 cardInfo: {}
