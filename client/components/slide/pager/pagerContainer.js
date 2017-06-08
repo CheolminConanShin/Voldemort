@@ -28,10 +28,10 @@ export default class PagerContainer extends React.Component {
                     <Track
                         ref={c => this.track = c}
                         viewsToShow={1}
-                        currentView={this.props.slideCurrentIndex - 1}
+                        currentView={this.props.slideCurrentIndex}
                         className="track"
                         onViewChange={currentIndex => {
-                            this.props.setCurrentIndex(currentIndex[0] + 1)
+                            this.props.setCurrentIndex(currentIndex[0])
                         }}>
                         <CardUsagePresenter openCalculator={this.openCalculator}/>
                         <FinishedCardCancelPresenter/>

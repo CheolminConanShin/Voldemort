@@ -1,7 +1,7 @@
 import * as types from '../actions/types'
 
 const initialState = {
-    currentIndex: 1
+    currentIndex: 0
 }
 
 const slidesReducer = (state = initialState, action) => {

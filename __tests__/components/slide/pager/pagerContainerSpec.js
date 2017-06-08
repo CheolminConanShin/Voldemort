@@ -10,9 +10,10 @@ import {ViewPager} from 'react-view-pager'
 
 describe('<PagerContainer', () => {
 
+    const CURRENT_INDEX = 1;
     const initialState = {
         slidesReducer: {
-            currentIndex: 1
+            currentIndex: CURRENT_INDEX
         },
         cardInfoReducer: {
             cardInfo: {
@@ -33,15 +34,15 @@ describe('<PagerContainer', () => {
         expect(renderedElement.find('Track').exists()).toBeTruthy()
     })
 
-    it('should display track with three different pages(card usage, finished card cancel, new card)', () => {
+    it('should display tracks with 3 different pages(card usage, finished card cancel, new card)', () => {
         const track = renderedElement.find('Track')
         expect(track.childAt(0).type().name).toEqual('CardUsagePresenter')
         expect(track.childAt(1).type().name).toEqual('FinishedCardCancelPresenter')
         expect(track.childAt(2).type().name).toEqual('RegisterNewCardPresenter')
     })
 
-    it('should display track with current view equals to slide reducer current index - 1', () => {
-        expect(renderedElement.find('Track').prop('currentView')).toEqual(initialState.slidesReducer.currentIndex-1)
+    it('should display view with current index', () => {
+        expect(renderedElement.find('Track').prop('currentView')).toEqual(CURRENT_INDEX)
     })
 
     it('should call set current index property function on view change', () => {

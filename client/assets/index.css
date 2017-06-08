@@ -23,22 +23,22 @@ html, body, #root {
     opacity: 0.6;
 }
 
-.tab1.active ~ .hr2 {
+.tab0.active ~ .hr2 {
     margin-left: 5%;
 }
 
-.tab2.active ~ .hr2 {
+.tab1.active ~ .hr2 {
     margin-left: 55%;
 }
 
-.tab1.active ~ .hr3 {
+.tab0.active ~ .hr3 {
     margin-left: 0%;
 }
 
-.tab2.active ~ .hr3 {
+.tab1.active ~ .hr3 {
     margin-left: 35%;
 }
 
-.tab3.active ~ .hr3 {
+.tab2.active ~ .hr3 {
     margin-left: 69%;
 }
