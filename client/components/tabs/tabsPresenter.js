@@ -10,21 +10,38 @@ const styles = {
         marginBottom: '2vh',
         boxShadow: '0px -1vw 4vw 2vw lightgrey'
     },
-    underLine: {
+    underLine2Parts: {
+        width: '38%',
+        transition: '.3s ease-in-out',
+        borderTop: '2px solid #3f6072'
+    },
+    underLine3Parts: {
         width: '30%',
         transition: '.3s ease-in-out',
         borderTop: '2px solid #3f6072'
     }
 }
 
-export default class TabsPresenter extends React.Component {
+export class TabsPresenterForSlider extends React.Component {
     render() {
         return (
             <div style={styles.size}>
                 <Tab index={1} text="사용중" width="25.1vw"/>
                 <Tab index={2} text="유지" width="34vw"/>
                 <Tab index={3} text="신규가능" width="25.1vw"/>
-                <hr style={styles.underLine}/>
+                <hr style={styles.underLine3Parts} className="hr3"/>
+            </div>
+        )
+    }
+}
+
+export class TabsPresenterForDetail extends React.Component {
+    render() {
+        return (
+            <div style={styles.size}>
+                <Tab index={1} text="사용내역" width="43vw"/>
+                <Tab index={2} text="기본정보" width="43vw"/>
+                <hr style={styles.underLine2Parts} className="hr2"/>
             </div>
         )
     }

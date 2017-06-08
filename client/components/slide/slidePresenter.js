@@ -1,6 +1,6 @@
 import React from "react";
 import NavigationBar from "../navigationBar/navigationBarPresenter";
-import TabsPresenter from "../tabs/tabsPresenter";
+import {TabsPresenterForSlider} from "../tabs/tabsPresenter";
 import Pager from "./pager/pagerContainer";
 
 const styles = {
@@ -22,7 +22,7 @@ export default class SlidePresenter extends React.Component {
             <div>
                 <div style={styles.above}>
                     <NavigationBar title="볼드모트"/>
-                    <TabsPresenter/>
+                    <TabsPresenterForSlider/>
                 </div>
                 <div style={styles.below}>
                     <Pager/>

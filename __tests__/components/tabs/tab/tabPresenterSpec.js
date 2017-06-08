@@ -4,9 +4,17 @@ import {shallow} from 'enzyme'
 import TabPresenter from '../../../../client/components/tabs/tab/tabPresenter'
 
 describe('<TabPresenter/>', () => {
-    const renderedElement = shallow(<TabPresenter text={"tab text"}/>)
+    const clickEventHandler = jest.fn()
+
+    const renderedElement = shallow(<TabPresenter text={"tab text"} changeIndex={clickEventHandler}/>)
 
     it('should display tab text', () => {
         expect(renderedElement.text()).toBe('tab text')
+    })
+
+    it('should call changeIndex event handler on clicking tab', () => {
+        renderedElement.simulate('click')
+
+        expect(clickEventHandler).toHaveBeenCalled()
     })
 })

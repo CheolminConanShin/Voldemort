@@ -6,7 +6,7 @@ import TabPresenter from "./tabPresenter";
 
 const mapStateToProps = (state) => {
     return {
-        currentIndex: state.slidesReducer.currentIndex
+        isTabActive: (tabIndex) => state.slidesReducer.currentIndex == tabIndex
     }
 }
 
@@ -25,10 +25,9 @@ export default class TabContainer extends React.Component {
     }
 
     render() {
-        const activeTabClass = this.props.index == this.props.currentIndex ? "active" : "inactive"
-        const classNames = "tab" + this.props.index + " " + activeTabClass
+        const isActive = this.props.isTabActive(this.props.index)
         return (
-            <TabPresenter classNames={classNames} {...this.props} changeIndex={this.setCurrentIndexHandler}/>
+            <TabPresenter isActive={isActive} {...this.props} changeIndex={this.setCurrentIndexHandler}/>
         )
     }
 
