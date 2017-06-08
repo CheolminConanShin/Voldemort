@@ -15,7 +15,7 @@ export default class CardDetailContainer extends React.Component {
     render() {
         return (
             <div>
-                <NavigationBar arrow pencil title={this.props.cardInfo.name}/>
+                <NavigationBar arrow={true} pencil={true} title={this.props.cardInfo.name}/>
                 <TabsPresenterForDetail/>
             </div>
         )

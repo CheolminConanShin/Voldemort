@@ -1,6 +1,5 @@
 import React from 'react'
-import {mount} from 'enzyme'
-import {Provider} from 'react-redux'
+import {shallow} from 'enzyme'
 import configureStore from "redux-mock-store";
 
 import CardList from '../../../../../../client/components/slide/pager/page/cardUsage/cardListContainer'
@@ -22,10 +21,12 @@ describe('<CardList/> for card usage page', () => {
     }
     const store = configureStore()(initialState)
 
-    const renderedElement = mount(<Provider store={store}><CardList/></Provider>)
+    const renderedElement = shallow(<CardList store={store}/>).shallow()
 
     it('should display one progress card and one satisfied card', () => {
-        expect(renderedElement.find('ProgressCardContainer').exists()).toBeTruthy()
-        expect(renderedElement.find('SatisfiedCard').exists()).toBeTruthy()
+        const firstCardDivTag = renderedElement.childAt(0).node
+        expect(firstCardDivTag.type.displayName).toContain('ProgressCardContainer')
+        const secondCardDivTag = renderedElement.childAt(1).node
+        expect(secondCardDivTag.type.name).toContain('SatisfiedCard')
     })
 })

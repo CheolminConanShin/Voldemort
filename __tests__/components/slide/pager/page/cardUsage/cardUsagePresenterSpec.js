@@ -6,7 +6,7 @@ import CardUsagePresenter from '../../../../../../client/components/slide/pager/
 describe('<CardUsagePresenter/>', () => {
     const renderedElement = shallow(<CardUsagePresenter/>)
 
-    it('should display date, card list, and add new card button', () => {
+    it('should render date field, card list, and new card button', () => {
         expect(renderedElement.find('DateField').exists()).toBeTruthy()
         expect(renderedElement.childAt(1).type().displayName).toContain('CardList')
         expect(renderedElement.find('button').exists()).toBeTruthy()

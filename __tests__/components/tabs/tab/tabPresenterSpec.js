@@ -8,7 +8,7 @@ describe('<TabPresenter/>', () => {
 
     const renderedElement = shallow(<TabPresenter text={"tab text"} changeIndex={clickEventHandler}/>)
 
-    it('should display tab text', () => {
+    it('should display text property', () => {
         expect(renderedElement.text()).toBe('tab text')
     })
 

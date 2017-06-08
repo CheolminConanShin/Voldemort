@@ -2,7 +2,7 @@ import * as actions from '../../client/actions/cardInfoAction'
 import * as types from '../../client/actions/types'
 
 describe('Card Information Actions', () => {
-    it('should return an action with card information to be updated', () => {
+    it('should return an action with card information to be updated on updateCardInfo action creator is called', () => {
         const expectedAction = {
             type: types.UPDATE_CARD_INFO,
             cardInfo: {

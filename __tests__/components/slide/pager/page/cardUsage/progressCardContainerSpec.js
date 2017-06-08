@@ -14,16 +14,19 @@ describe('<ProgressCardContainer/>', () => {
     const renderedElement = shallow(<ProgressCardContainer store={store} cardInfo={initialState.cardInfo}/>).shallow()
     const progressCard = renderedElement.instance()
 
-    it('should return left amount object containing manwon, cheonwon, baekwon field on getLeftAmount method', () => {
+    it('should return an object with 0 manwon, 5 cheonwon, and 0 baekwon fields when getLeftAmount method is called with total 10000 and used 5000', () => {
         const expectedResult = {
             leftManwon: 0,
             leftCheonwon: 5,
             leftBaekwon: 0
         }
-        expect(progressCard.getLeftAmount("10000", "5000")).toEqual(expectedResult)
+
+        const total = "10000"
+        const used = "5000"
+        expect(progressCard.getLeftAmount(total, used)).toEqual(expectedResult)
     })
 
-    it('should return left amount string in form of xxxx원 부족 on leftAmountToString method', () => {
+    it('should return left amount string when leftAmountToString method is called', () => {
         const leftAmount = {
             leftManwon: 5,
             leftCheonwon: 5,

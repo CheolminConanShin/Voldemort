@@ -6,7 +6,7 @@ import DateField from '../../../../../../client/components/slide/pager/page/card
 describe('<DateField/>', () => {
     const renderedElement = shallow(<DateField/>)
 
-    it('should display todays year and month', () => {
+    it('should display today year and month', () => {
         const currentYear = new Date().getFullYear()
         const currentMonth = new Date().getMonth()+1
         expect(renderedElement.find('Time').prop('value').getFullYear()).toBe(currentYear)
