@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 
 import NavigationBar from '../navigationBar/navigationBarPresenter'
 import {TabsPresenterForDetail} from '../tabs/tabsPresenter'
+import Card from './card/card'
 
 const mapStateToProp = (state) => {
     return {
@@ -16,6 +17,7 @@ export default class CardDetailContainer extends React.Component {
         return (
             <div>
                 <NavigationBar arrow={true} pencil={true} title={this.props.cardInfo.name}/>
+                <Card/>
                 <TabsPresenterForDetail/>
             </div>
         )
