@@ -4,6 +4,7 @@ import {connect} from "react-redux";
 import NavigationBar from "../navigationBar/navigationBarPresenter";
 import Card from "../card/card";
 import {TabsPresenterForDetail} from "../tabs/tabsPresenter";
+import PagerContainer from "../pager/pagerContainer";
 
 const mapStateToProp = (state) => {
     return {
@@ -19,6 +20,9 @@ export default class CardDetail extends React.Component {
                 <NavigationBar arrow={true} pencil={true} title={this.props.cardInfo.name}/>
                 <Card/>
                 <TabsPresenterForDetail/>
+                <PagerContainer>
+
+                </PagerContainer>
             </div>
         )
     }
