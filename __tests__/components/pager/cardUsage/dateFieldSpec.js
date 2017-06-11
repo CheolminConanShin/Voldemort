@@ -1,7 +1,7 @@
 import React from 'react'
 import {shallow} from 'enzyme'
 
-import DateField from '../../../../../client/components/pager/page/cardUsage/dateField'
+import DateField from '../../../../client/components/pager/cardUsage/dateField'
 
 describe('<DateField/>', () => {
     const renderedElement = shallow(<DateField/>)

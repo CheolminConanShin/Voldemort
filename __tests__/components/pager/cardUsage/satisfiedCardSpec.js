@@ -1,7 +1,7 @@
 import React from 'react'
 import {shallow} from 'enzyme'
 
-import SatisfiedCard from '../../../../../client/components/pager/page/cardUsage/satisfiedCard'
+import SatisfiedCard from '../../../../client/components/pager/cardUsage/satisfiedCard'
 
 describe('<SatisfiedCard/>', () => {
 

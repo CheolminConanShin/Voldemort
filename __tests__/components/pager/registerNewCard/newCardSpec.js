@@ -1,7 +1,7 @@
 import React from 'react'
 import {shallow} from 'enzyme'
 
-import NewCard from '../../../../../client/components/pager/page/registerNewCard/newCard'
+import NewCard from '../../../../client/components/pager/registerNewCard/newCard'
 
 describe('<NewCard/>', () => {
     it('should display card name', () => {
