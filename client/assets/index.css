@@ -42,3 +42,8 @@ html, body, #root {
 .tab2.active ~ .hr3 {
     margin-left: 69%;
 }
+
+.track {
+    height: 83vh;
+    overflow-y: auto;
+}

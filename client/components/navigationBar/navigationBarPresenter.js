@@ -5,8 +5,8 @@ import Pencil from './pencil'
 
 const styles = {
     size: {
-        position: 'fixed',
         width: '100%',
+        padding: '17px 0px',
         paddingTop: "20px",
     }
 }
