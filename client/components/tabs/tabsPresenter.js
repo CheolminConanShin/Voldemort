@@ -3,11 +3,10 @@ import Tab from './tab/tabContainer'
 
 const styles = {
     size: {
-        position: 'relative',
         paddingLeft: '4.2vw',
         paddingRight: '4.2vw',
         marginBottom: '2vh',
-        boxShadow: '0px 2vw 4vw lightgrey'
+        boxShadow: '0px 2vw 4vw #E8E8E8'
     },
     underLine2Parts: {
         width: '38%',
