@@ -1,9 +1,9 @@
-import React from 'react'
-import {connect} from 'react-redux'
+import React from "react";
+import {connect} from "react-redux";
 
-import NavigationBar from '../navigationBar/navigationBarPresenter'
-import {TabsPresenterForDetail} from '../tabs/tabsPresenter'
-import Card from './card/card'
+import NavigationBar from "../navigationBar/navigationBarPresenter";
+import Card from "../card/card";
+import {TabsPresenterForDetail} from "../tabs/tabsPresenter";
 
 const mapStateToProp = (state) => {
     return {
@@ -12,7 +12,7 @@ const mapStateToProp = (state) => {
 }
 
 @connect(mapStateToProp)
-export default class CardDetailContainer extends React.Component {
+export default class CardDetail extends React.Component {
     render() {
         return (
             <div>

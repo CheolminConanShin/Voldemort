@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { setCurrentSlideIndex } from '../../../actions/slideAction'
+import { setCurrentSlideIndex } from '../../actions/slideAction'
 
 import {ViewPager, Frame, Track} from 'react-view-pager'
 const mapStatesToProps = (state) => {

@@ -1,7 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
-import * as CalculatorAction from '../../../../../actions/calculatorAction'
-import history from '../../../../../components/history'
+import * as CalculatorAction from '../../../../actions/calculatorAction'
+import history from '../../../../components/history'
 
 import ProgressCardPresenter from './progressCardPresenter'
 
