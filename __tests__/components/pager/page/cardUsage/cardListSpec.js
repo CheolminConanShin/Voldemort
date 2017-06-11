@@ -2,7 +2,7 @@ import React from 'react'
 import {shallow} from 'enzyme'
 import configureStore from "redux-mock-store";
 
-import CardList from '../../../../../../client/components/slide/pager/page/cardUsage/cardListContainer'
+import CardList from '../../../../../client/components/pager/page/cardUsage/cardListContainer'
 
 describe('<CardList/> for card usage page', () => {
     const initialState = {

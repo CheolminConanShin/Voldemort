@@ -1,9 +1,9 @@
 import React from 'react'
 import {shallow} from 'enzyme'
 import configureStore from 'redux-mock-store'
-import * as types from '../../../../../../client/actions/types'
+import * as types from '../../../../../client/actions/types'
 
-import ProgressCardContainer from '../../../../../../client/components/slide/pager/page/cardUsage/progressCardContainer'
+import ProgressCardContainer from '../../../../../client/components/pager/page/cardUsage/progressCardContainer'
 
 describe('<ProgressCardContainer/>', () => {
     const initialState = {

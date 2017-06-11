@@ -26,13 +26,15 @@ export default class PagerContainer extends React.Component {
                         viewsToShow={1}
                         currentView={this.props.slideCurrentIndex}
                         className="track"
-                        onViewChange={currentIndex => {
-                            this.props.setCurrentIndex(currentIndex[0])
-                        }}>
+                        onViewChange={(newIndex) => this.viewChangeHandler(newIndex[0])}>
                         {this.props.children}
                     </Track>
                 </Frame>
             </ViewPager>
         )
+    }
+
+    viewChangeHandler(index){
+        this.props.setCurrentIndex(index)
     }
 }

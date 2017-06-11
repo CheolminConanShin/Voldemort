@@ -1,7 +1,7 @@
 import React from 'react'
 import {shallow} from 'enzyme'
 
-import FinishedCardCancelPresenter from '../../../../../../client/components/slide/pager/page/finishedCardCancel/finishedCardCancelPresenter'
+import FinishedCardCancelPresenter from '../../../../../client/components/pager/page/finishedCardCancel/finishedCardCancelPresenter'
 
 describe('<FinishedCardCancelPresenter/>', () => {
     const renderedElement = shallow(<FinishedCardCancelPresenter/>)

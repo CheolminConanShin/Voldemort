@@ -1,6 +1,6 @@
 import React from 'react'
 import {shallow} from 'enzyme'
-import ProgressCardPresenter from '../../../../../../client/components/slide/pager/page/cardUsage/progressCardPresenter'
+import ProgressCardPresenter from '../../../../../client/components/pager/page/cardUsage/progressCardPresenter'
 
 describe('<ProgressCard/>', () => {
     const mockClickHandler = jest.fn()

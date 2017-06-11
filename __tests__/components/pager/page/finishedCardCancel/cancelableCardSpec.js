@@ -1,7 +1,7 @@
 import React from 'react'
 import {shallow} from 'enzyme'
 
-import CancelableCard from '../../../../../../client/components/slide/pager/page/finishedCardCancel/cancelableCard'
+import CancelableCard from '../../../../../client/components/pager/page/finishedCardCancel/cancelableCard'
 
 describe('<CancelableCard/>', () => {
     const initialState = {

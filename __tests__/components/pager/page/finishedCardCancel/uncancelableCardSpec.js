@@ -1,7 +1,7 @@
 import React from 'react'
 import {shallow} from 'enzyme'
 
-import UncancelableCard from '../../../../../../client/components/slide/pager/page/finishedCardCancel/uncancelableCard'
+import UncancelableCard from '../../../../../client/components/pager/page/finishedCardCancel/uncancelableCard'
 
 describe('<UncancelableCard/>', () => {
 
