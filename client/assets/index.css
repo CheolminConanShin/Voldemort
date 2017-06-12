@@ -4,7 +4,6 @@
 }
 
 html, body, #root {
-    height: 100%;
     font-family: Roboto;
     margin: 0px;
     color: #3f6072;
@@ -44,6 +43,7 @@ html, body, #root {
 }
 
 .track {
-    height: 83vh;
+    padding: 5px 0px;
+    height: calc(95vh - 150px);
     overflow-y: auto;
 }

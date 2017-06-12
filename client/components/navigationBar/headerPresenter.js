@@ -2,10 +2,10 @@ import React from 'react'
 
 const styles = {
     title: {
-        fontSize: "2.5vh",
+        fontSize: "18px",
         textAlign: "center",
         width: "100%",
-        lineHeight: '4vh'
+        lineHeight: '20px'
     }
 }
 

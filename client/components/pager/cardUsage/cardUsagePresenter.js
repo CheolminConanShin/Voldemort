@@ -13,8 +13,7 @@ const styles = {
         border: '1px solid #777777',
         borderRadius: '100px',
         backgroundColor: 'white',
-        padding: '10px 28px',
-        marginTop: '14px'
+        padding: '10px 28px'
     }
 }
 

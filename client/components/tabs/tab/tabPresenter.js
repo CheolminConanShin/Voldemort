@@ -7,7 +7,7 @@ const styles = {
         marginRight: '1.2vw'
     },
     font: {
-        fontSize: '2vh',
+        fontSize: '15px',
         textAlign: 'center'
     }
 }
