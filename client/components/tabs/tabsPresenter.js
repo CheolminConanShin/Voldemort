@@ -6,7 +6,7 @@ const styles = {
         paddingLeft: '4.2vw',
         paddingRight: '4.2vw',
         marginBottom: '2vh',
-        boxShadow: '0px 2vw 4vw #E8E8E8'
+        boxShadow: 'grey 0px 13px 10px -10px'
     },
     underLine2Parts: {
         width: '38%',
