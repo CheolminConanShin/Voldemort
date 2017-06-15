@@ -23,6 +23,7 @@ export default class ProgressCardContainer extends React.Component {
         const {used, total} = this.props.cardInfo
         const leftAmount = this.getLeftAmount(total, used);
         const leftAmountString = this.leftAmountToString(leftAmount);
+        this.props.cardInfo.leftAmount = leftAmountString
 
         return (
             <ProgressCardPresenter cardName={this.props.cardInfo.name} leftAmountString={leftAmountString} toggleCalculatorViewON={this.toggleCalculatorViewON}/>

@@ -5,6 +5,8 @@ import NavigationBar from "../navigationBar/navigationBarPresenter";
 import Card from "../card/card";
 import {TabsPresenterForDetail} from "../tabs/tabsPresenter";
 import PagerContainer from "../pager/pagerContainer";
+import CardHistory from "../pager/history/cardHistoryContainer";
+
 
 const mapStateToProp = (state) => {
     return {
@@ -21,7 +23,7 @@ export default class CardDetail extends React.Component {
                 <Card/>
                 <TabsPresenterForDetail/>
                 <PagerContainer>
-
+                    <CardHistory/>
                 </PagerContainer>
             </div>
         )
