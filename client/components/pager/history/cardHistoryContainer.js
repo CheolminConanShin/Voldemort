@@ -13,12 +13,10 @@ const styles = {
         opacity: '0.6'
     },
     row: {
-        display: 'flow-root',
         padding: '8px 0px'
     },
     date: {
         fontSize: '16px',
-        float:'left'
     },
     amount: {
         fontSize: '16px',

@@ -4,27 +4,21 @@ const styles = {
     container: {
         lineHeight: '37px',
         color: '#777777',
-        display: 'flow-root'
     },
     date: {
         fontSize: '13px',
-        display: 'table-cell',
         verticalAlign: 'middle',
-        float: 'left'
     },
     range: {
         fontSize: '13px',
         opacity: '0.7',
         marginLeft: '6px',
-        display: 'table-cell',
         verticalAlign: 'middle',
-        float: 'left'
     },
     amount: {
         color: '#7984f3',
         fontSize: '18px',
         fontWeight: 'bold',
-        display: 'table-cell',
         verticalAlign: 'middle',
         float: 'right'
     }
