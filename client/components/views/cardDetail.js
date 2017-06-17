@@ -6,7 +6,7 @@ import Card from "../card/card";
 import {TabsPresenterForDetail} from "../tabs/tabsPresenter";
 import PagerContainer from "../pager/pagerContainer";
 import CardHistory from "../pager/history/cardHistoryContainer";
-
+import Calculator from '../calculator/calculatorContainer'
 
 const mapStateToProp = (state) => {
     return {
@@ -22,9 +22,10 @@ export default class CardDetail extends React.Component {
                 <NavigationBar arrow={true} pencil={true} title={this.props.cardInfo.name}/>
                 <Card/>
                 <TabsPresenterForDetail/>
-                <PagerContainer>
+                <PagerContainer trackName="historyTrack">
                     <CardHistory/>
                 </PagerContainer>
+                <Calculator/>
             </div>
         )
     }

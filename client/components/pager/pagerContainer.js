@@ -5,7 +5,8 @@ import { setCurrentSlideIndex } from '../../actions/slideAction'
 import {ViewPager, Frame, Track} from 'react-view-pager'
 const mapStatesToProps = (state) => {
     return {
-        slideCurrentIndex: state.slidesReducer.currentIndex
+        slideCurrentIndex: state.slidesReducer.currentIndex,
+        calculatorOn: state.calculatorReducer.toggle
     }
 }
 
@@ -20,12 +21,14 @@ export default class PagerContainer extends React.Component {
     render() {
         return (
             <ViewPager tag="main">
-                <Frame className="frame">
+                <Frame
+                    autoSize={true}
+                    className="frame">
                     <Track
+                        className={this.props.calculatorOn ? 'half-track' : this.props.trackName}
                         ref={c => this.track = c}
                         viewsToShow={1}
                         currentView={this.props.slideCurrentIndex}
-                        className="track"
                         onViewChange={(newIndex) => this.viewChangeHandler(newIndex[0])}>
                         {this.props.children}
                     </Track>

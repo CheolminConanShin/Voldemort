@@ -1,5 +1,5 @@
 import React from 'react'
-import { connect } from 'react-redux'
+import {connect} from 'react-redux'
 import * as CalculatorAction from '../../../actions/calculatorAction'
 
 const styles = {
@@ -30,6 +30,7 @@ export default class UsageButton extends React.Component {
 
         this.toggleCalculator = this.toggleCalculator.bind(this)
     }
+
     render() {
         return (
             <div id="addUsageButton" onClick={this.toggleCalculator} style={styles.addSpend}>
@@ -39,7 +40,9 @@ export default class UsageButton extends React.Component {
     }
 
     toggleCalculator() {
-        this.props.setCalculatorData()
+        if (this.props.setCalculatorData != undefined) {
+            this.props.setCalculatorData()
+        }
         this.props.toggleCalculator()
     }
 }

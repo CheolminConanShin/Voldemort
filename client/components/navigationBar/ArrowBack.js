@@ -1,5 +1,7 @@
 import React from 'react'
 import history from '../../components/history'
+import * as CalculatorActions from '../../actions/calculatorAction'
+import {connect} from 'react-redux'
 
 const styles = {
     position: {
@@ -11,6 +13,13 @@ const styles = {
     }
 }
 
+const mapDispatchToProps = (dispatch) => {
+    return {
+        toggleCalculatorViewOFF: () => dispatch(CalculatorActions.toggleCalculatorViewOFF())
+    }
+}
+
+@connect(null, mapDispatchToProps)
 export default class ArrowBack extends React.Component {
     constructor(props) {
         super(props)
@@ -20,6 +29,7 @@ export default class ArrowBack extends React.Component {
 
     navigateBack() {
         history.goBack()
+        this.props.toggleCalculatorViewOFF()
     }
 
     render() {

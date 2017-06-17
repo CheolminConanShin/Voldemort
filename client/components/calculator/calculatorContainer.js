@@ -8,7 +8,7 @@ import CalculatorPresenter from './calculatorPresenter'
 const mapStateToProp = (state) => {
     return {
         toggle: state.calculatorReducer.toggle,
-        cardInfo: state.cardInfoReducer.cardInfo
+        cardInfo: state.calculatorReducer.cardInfo
     }
 }
 

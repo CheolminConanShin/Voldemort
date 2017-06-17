@@ -4,9 +4,8 @@ const styles = {
     buttons: {
         backgroundColor: 'white',
         width: '25vw',
-        height: '11.3vh',
-        fontSize: '50px',
-        border: '2px solid rgb(152, 152, 152)',
+        height: '58px',
+        fontSize: '18px',
         textAlign: 'center'
     },
     eraseArrow: {
@@ -15,13 +14,12 @@ const styles = {
     empty: {
         backgroundColor: '#bcbcbc',
         width: '25vw',
-        height: '11.3vh',
-        border: '2px solid rgb(152, 152, 152)',
+        height: '58px',
     },
     enter: {
         backgroundColor: '#7984f3',
         color: 'white',
-        fontSize: '50px',
+        fontSize: '18px',
         textAlign: 'center'
     }
 }

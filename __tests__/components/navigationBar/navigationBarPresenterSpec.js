@@ -6,12 +6,12 @@ import NavigationBar from '../../../client/components/navigationBar/navigationBa
 describe('<NavigationBar/>', () => {
     it('should render back arrow button if it has arrow property', () => {
         const renderElement = shallow(<NavigationBar title="test title" arrow={true}/>)
-        expect(renderElement.find('ArrowBack').exists()).toBeTruthy()
+        expect(renderElement.find('Connect(ArrowBack)').exists()).toBeTruthy()
     })
 
     it('should not render back arrow button if it does not have arrow property', () => {
         const renderElement = shallow(<NavigationBar title="test title" arrow={false}/>)
-        expect(renderElement.find('ArrowBack').exists()).toBeFalsy()
+        expect(renderElement.find('Connect(ArrowBack)').exists()).toBeFalsy()
     })
 
     it('should pass title text to header component', () => {

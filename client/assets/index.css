@@ -42,8 +42,25 @@ html, body, #root {
     margin-left: 69%;
 }
 
-.track {
-    padding: 5px 0px;
-    height: calc(95vh - 150px);
+.frame {
+    height: auto !important;
+}
+
+.mainTrack {
     overflow-y: auto;
+    max-height: calc(100vh - 120px);
+}
+
+.historyTrack {
+    overflow-y: auto;
+    max-height: calc(100vh - 240px);
+}
+
+.half-track {
+    overflow-y: auto;
+    max-height: calc(100vh - 360px);
+}
+
+table, th, td {
+    border-spacing: 1px !important
 }

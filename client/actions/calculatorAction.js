@@ -6,6 +6,12 @@ export const toggleCalculatorView = () => {
     }
 }
 
+export const toggleCalculatorViewOFF = () => {
+    return {
+        type: types.TOGGLE_CALCULATOR_VIEW_OFF
+    }
+}
+
 export const setCalculatorData = (cardInfo) => {
     return {
         type: types.SET_CALCULATOR_DATA,

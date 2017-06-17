@@ -4,6 +4,7 @@ import {connect} from 'react-redux'
 import Firebase from '../../../actions/firebase'
 
 import LeftAmountField from './leftAmountField'
+import UsageButton from '../cardUsage/addUsageButton'
 
 const styles = {
     container: {
@@ -73,6 +74,7 @@ export default class CardHistoryContainer extends React.Component {
                         return <div key={date} style={styles.row}><span style={styles.date}>{usedDate}</span><span style={styles.currency}>원</span><span style={styles.amount}>{leftAmount}</span></div>
                     })}
                 </div>
+                <UsageButton setCalculatorData={undefined}/>
             </View>
         )
     }

@@ -6,7 +6,7 @@ import * as types from "../../../client/actions/types";
 import PagerContainer from "../../../client/components/pager/pagerContainer";
 import {ViewPager} from "react-view-pager";
 
-describe('<PagerContainer', () => {
+describe('<PagerContainer/>', () => {
 
     const CURRENT_INDEX = 1;
     const initialState = {
@@ -18,6 +18,9 @@ describe('<PagerContainer', () => {
                 total: '100000',
                 used: '50000'
             }
+        },
+        calculatorReducer: {
+            toggle: true
         }
     }
 

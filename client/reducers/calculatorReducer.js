@@ -20,6 +20,10 @@ const calculatorReducer = (state=initialState, action) => {
             return Object.assign({}, state, {
                 toggle: !state.toggle
             })
+        case types.TOGGLE_CALCULATOR_VIEW_OFF:
+            return Object.assign({}, state, {
+                toggle: false
+            })
         default:
             return state
     }

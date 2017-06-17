@@ -17,7 +17,7 @@ export default class Main extends React.Component {
             <div>
                 <NavigationBar title="볼드모트"/>
                 <TabsPresenterForSlider/>
-                <PagerContainer>
+                <PagerContainer trackName="mainTrack">
                     <CardUsagePresenter/>
                     <FinishedCardCancelPresenter/>
                     <RegisterNewCardPresenter/>
