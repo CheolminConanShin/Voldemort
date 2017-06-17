@@ -35,13 +35,13 @@ describe('<ProgressCardContainer/>', () => {
         expect(progressCard.leftAmountToString(leftAmount)).toEqual(" 5만 5천 5백원 부족")
     })
 
-    it('should create calculator toggle action on toggle calculator method call', () => {
+    it('should create set calculator data action on set calculator data method call', () => {
         const cardInfo = {
             total: '500000',
             used: '10000'
         }
-        progressCard.props.toggleCalculatorViewON(cardInfo)
-        expect(store.getActions()[0].type).toEqual(types.TOGGLE_CALCULATOR_VIEW_ON)
+        progressCard.props.setCalculatorData(cardInfo)
+        expect(store.getActions()[0].type).toEqual(types.SET_CALCULATOR_DATA)
     })
 
     it('should set card data if toggleCalculatorON method is called', () => {
@@ -60,7 +60,7 @@ describe('<ProgressCardContainer/>', () => {
             total: '500000',
             used: '10000'
         }
-        renderedElement.props.toggleCalculatorViewON(cardInfo)
+        renderedElement.props.setCalculatorData(cardInfo)
         expect(store.getActions()[0].cardInfo).toEqual(cardInfo)
     })
 })

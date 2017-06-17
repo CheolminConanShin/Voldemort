@@ -1,4 +1,5 @@
 import React from 'react'
+import UsageButton from './addUsageButton'
 
 const styles = {
     container: {
@@ -15,18 +16,6 @@ const styles = {
         fontWeight: 'bold',
         color: '#7984f3',
         textAlign: 'right'
-    },
-    addSpend: {
-        width: '30%',
-        fontSize: '12px',
-        color: 'rgba(255,255,255,0.7)',
-        background: '#7984f3',
-        textAlign: 'center',
-        border: '1px solid',
-        borderRadius: '100px',
-        marginTop: '3%',
-        marginLeft: '66%',
-        padding: '7px'
     }
 }
 
@@ -40,9 +29,7 @@ export default class ProgressCardPresenter extends React.Component {
                 <div style={styles.money}>
                     {this.props.leftAmountString}
                 </div>
-                <div id="addUsageButton" onClick={this.props.toggleCalculatorViewON} style={styles.addSpend}>
-                    사용금액 추가
-                </div>
+                <UsageButton setCalculatorData={this.props.setCalculatorData}/>
             </div>
         )
     }

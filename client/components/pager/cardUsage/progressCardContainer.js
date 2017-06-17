@@ -7,7 +7,7 @@ import ProgressCardPresenter from './progressCardPresenter'
 
 const mapDispatchToProp = (dispatch) => {
     return {
-        toggleCalculatorViewON: (cardInfo) => dispatch(CalculatorAction.toggleCalculatorViewON(cardInfo))
+        setCalculatorData: (cardInfo) => dispatch(CalculatorAction.setCalculatorData(cardInfo))
     }
 }
 
@@ -16,7 +16,7 @@ export default class ProgressCardContainer extends React.Component {
     constructor(props) {
         super(props)
 
-        this.toggleCalculatorViewON = this.toggleCalculatorViewON.bind(this)
+        this.setCalculatorData = this.setCalculatorData.bind(this)
     }
 
     render() {
@@ -26,12 +26,12 @@ export default class ProgressCardContainer extends React.Component {
         this.props.cardInfo.leftAmount = leftAmountString
 
         return (
-            <ProgressCardPresenter cardName={this.props.cardInfo.name} leftAmountString={leftAmountString} toggleCalculatorViewON={this.toggleCalculatorViewON}/>
+            <ProgressCardPresenter cardName={this.props.cardInfo.name} leftAmountString={leftAmountString} setCalculatorData={this.setCalculatorData}/>
         )
     }
 
-    toggleCalculatorViewON() {
-        this.props.toggleCalculatorViewON(this.props.cardInfo)
+    setCalculatorData() {
+        this.props.setCalculatorData(this.props.cardInfo)
         history.push('/detail')
 
     }
