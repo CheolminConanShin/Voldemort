@@ -17,13 +17,13 @@ describe('Calculator Reducer', () => {
         expect(calculatorReducer(undefined, unknownAction)).toEqual(expectedInitialState)
     })
 
-    it('should return toggle state true on TOGGLE_CALCULATOR_VIEW_ON action', () => {
+    it('should return toggle state true when toggle state is false', () => {
         const initialState = {
             toggle: false
         }
 
         const toggleCalculatorViewAction = {
-            type: types.TOGGLE_CALCULATOR_VIEW_ON
+            type: types.TOGGLE_CALCULATOR_VIEW
         }
 
         const expectedState = {
@@ -32,13 +32,13 @@ describe('Calculator Reducer', () => {
         expect(calculatorReducer(initialState, toggleCalculatorViewAction)).toEqual(expectedState)
     })
 
-    it('should return toggle state false on TOGGLE_CALCULATOR_VIEW_OFF action', () => {
+    it('should return toggle state false when toggle state if true', () => {
         const initialState = {
             toggle: true
         }
 
         const toggleCalculatorViewAction = {
-            type: types.TOGGLE_CALCULATOR_VIEW_OFF
+            type: types.TOGGLE_CALCULATOR_VIEW
         }
 
         const expectedState = {

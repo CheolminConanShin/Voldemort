@@ -27,6 +27,6 @@ describe('<UsageButton/>', () => {
 
     it('should create toggle calculator view on action on click', () => {
         renderedElement.simulate('click')
-        expect(store.getActions()[0].type).toEqual(types.TOGGLE_CALCULATOR_VIEW_ON)
+        expect(store.getActions()[0].type).toEqual(types.TOGGLE_CALCULATOR_VIEW)
     })
 })

@@ -16,13 +16,9 @@ const calculatorReducer = (state=initialState, action) => {
                 cardInfo: action.cardInfo
             })
         }
-        case types.TOGGLE_CALCULATOR_VIEW_ON:
+        case types.TOGGLE_CALCULATOR_VIEW:
             return Object.assign({}, state, {
-                toggle: true
-            })
-        case types.TOGGLE_CALCULATOR_VIEW_OFF:
-            return Object.assign({}, state, {
-                toggle: false
+                toggle: !state.toggle
             })
         default:
             return state

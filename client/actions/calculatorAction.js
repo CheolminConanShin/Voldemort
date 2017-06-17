@@ -1,14 +1,8 @@
 import * as types from './types'
 
-export const toggleCalculatorViewON = () => {
+export const toggleCalculatorView = () => {
     return {
-        type: types.TOGGLE_CALCULATOR_VIEW_ON
-    }
-}
-
-export const toggleCalculatorViewOFF = () => {
-    return {
-        type: types.TOGGLE_CALCULATOR_VIEW_OFF
+        type: types.TOGGLE_CALCULATOR_VIEW
     }
 }
 

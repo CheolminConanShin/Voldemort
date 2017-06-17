@@ -19,7 +19,7 @@ const styles = {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        toggleCalculatorON: () => dispatch(CalculatorAction.toggleCalculatorViewON())
+        toggleCalculator: () => dispatch(CalculatorAction.toggleCalculatorView())
     }
 }
 
@@ -40,6 +40,6 @@ export default class UsageButton extends React.Component {
 
     toggleCalculator() {
         this.props.setCalculatorData()
-        this.props.toggleCalculatorON()
+        this.props.toggleCalculator()
     }
 }
