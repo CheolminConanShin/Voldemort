@@ -1,5 +1,6 @@
 import React from 'react'
 import {connect} from 'react-redux'
+import AnimateHeight from 'react-animate-height'
 
 import FirebaseConnector from "../../actions/firebase";
 import * as CalculatorActions from '../../actions/calculatorAction'
@@ -35,9 +36,12 @@ export default class CalculatorContainer extends React.Component {
 
     render() {
         return (
-            <div>
-                {this.props.toggle ? <CalculatorPresenter cardInfo={this.props.cardInfo} updateCardData={this.updateCardData}/> : null}
-            </div>
+            <AnimateHeight
+                duration={ 1000 }
+                height={ this.props.toggle ? 'auto' : 0 }
+                easing={'true'}>
+                <CalculatorPresenter cardInfo={this.props.cardInfo} updateCardData={this.updateCardData}/>
+            </AnimateHeight>
         )
     }
 }
