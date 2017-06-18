@@ -42,23 +42,19 @@ html, body, #root {
     margin-left: 69%;
 }
 
-.frame {
-    height: auto !important;
-}
-
 .mainTrack {
-    overflow-y: auto;
     max-height: calc(100vh - 120px);
+    overflow-y: auto;
 }
 
 .historyTrack {
-    overflow-y: auto;
     max-height: calc(100vh - 240px);
+    overflow-y: auto;
 }
 
 .half-track {
-    overflow-y: auto;
     max-height: calc(100vh - 360px);
+    overflow-y: auto;
 }
 
 table, th, td {

@@ -23,7 +23,7 @@ export default class PagerContainer extends React.Component {
             <ViewPager tag="main">
                 <Frame
                     autoSize={true}
-                    className="frame">
+                    className={this.props.calculatorOn ? 'half-track' : this.props.trackName}>
                     <Track
                         className={this.props.calculatorOn ? 'half-track' : this.props.trackName}
                         ref={c => this.track = c}
