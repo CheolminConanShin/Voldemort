@@ -16,6 +16,10 @@ const styles = {
         fontWeight: 'bold',
         color: '#7984f3',
         textAlign: 'right'
+    },
+    usageButton: {
+        marginTop: '3%',
+        marginLeft: '66%',
     }
 }
 
@@ -29,7 +33,9 @@ export default class ProgressCardPresenter extends React.Component {
                 <div style={styles.money}>
                     {this.props.leftAmountString}
                 </div>
-                <UsageButton setCalculatorData={this.props.setCalculatorData}/>
+                <div style={styles.usageButton}>
+                    <UsageButton setCalculatorData={this.props.setCalculatorData}/>
+                </div>
             </div>
         )
     }
