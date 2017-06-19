@@ -5,6 +5,7 @@ import Firebase from '../../../actions/firebase'
 
 import LeftAmountField from './leftAmountField'
 import UsageButton from '../cardUsage/addUsageButton'
+import HistoryItem from './historyItem'
 
 const styles = {
     container: {
@@ -12,23 +13,6 @@ const styles = {
     },
     line: {
         opacity: '0.6'
-    },
-    row: {
-        padding: '8px 0px'
-    },
-    date: {
-        fontSize: '16px',
-    },
-    amount: {
-        fontSize: '16px',
-        float: 'right'
-    },
-    currency: {
-        color: '#575757',
-        float: 'right',
-        fontSize: '12px',
-        marginTop: '3px',
-        marginLeft: '2px'
     },
     usageButton: {
         margin: '10px 120px'
@@ -74,7 +58,7 @@ export default class CardHistoryContainer extends React.Component {
                     {Object.keys(this.state.history).map(function(date) {
                         const usedDate = me.dateFormatter(date);
                         const leftAmount = me.moneyFormatter(me.state.history[date]);
-                        return <div key={date} style={styles.row}><span style={styles.date}>{usedDate}</span><span style={styles.currency}>원</span><span style={styles.amount}>{leftAmount}</span></div>
+                        return <HistoryItem key={date} date={date} usedDate={usedDate} leftAmount={leftAmount}/>
                     })}
                 </div>
                 <div style={styles.usageButton}>
