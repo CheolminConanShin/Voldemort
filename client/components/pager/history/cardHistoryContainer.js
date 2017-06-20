@@ -6,6 +6,7 @@ import Firebase from '../../../actions/firebase'
 import LeftAmountField from './leftAmountField'
 import UsageButton from '../cardUsage/addUsageButton'
 import HistoryItem from './historyItem'
+import NewHistoryItem from './newHistoryItem'
 
 const styles = {
     container: {
@@ -21,7 +22,7 @@ const styles = {
 
 const mapStateToProp = (state) => {
     return {
-        cardInfo: state.calculatorReducer.cardInfo
+        toggle: state.calculatorReducer.toggle
     }
 }
 
@@ -53,13 +54,14 @@ export default class CardHistoryContainer extends React.Component {
         return (
             <View>
                 <div style={styles.container}>
-                    <LeftAmountField date={"2017.07"} range={"(07.01 ~ 07.31)"} amount={this.props.cardInfo.leftAmount}/>
+                    <LeftAmountField date={"2017.07"} range={"(07.01 ~ 07.31)"}/>
                     <hr style={styles.line}/>
                     {Object.keys(this.state.history).map(function(date) {
                         const usedDate = me.dateFormatter(date);
                         const leftAmount = me.moneyFormatter(me.state.history[date]);
                         return <HistoryItem key={date} date={date} usedDate={usedDate} leftAmount={leftAmount}/>
                     })}
+                    {this.props.toggle ? <NewHistoryItem/> : null}
                 </div>
                 <div style={styles.usageButton}>
                     <UsageButton setCalculatorData={undefined}/>
