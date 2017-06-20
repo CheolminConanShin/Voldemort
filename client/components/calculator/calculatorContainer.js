@@ -18,7 +18,7 @@ const mapDispatchToProp = (dispatch) => {
     return {
         toggleCalculatorViewOFF: () => dispatch(CalculatorActions.toggleCalculatorViewOFF()),
         updateUsedValue: (value) => dispatch(CalculatorActions.updateUsedValue(value)),
-        setUsageValue: (value) => dispatch(CalculatorActions.setUsageValue(value))
+        setCurrentUsageValue: (value) => dispatch(CalculatorActions.setCurrentUsageValue(value))
     }
 }
 
@@ -43,7 +43,7 @@ export default class CalculatorContainer extends React.Component {
                 duration={ 1000 }
                 height={ this.props.toggle ? 'auto' : 0 }
                 easing={'true'}>
-                <CalculatorPresenter {...this.props} updateCardData={this.updateCardUsedAmountInDB}/>
+                <CalculatorPresenter {...this.props} updateCardUsedAmountInDB={this.updateCardUsedAmountInDB}/>
             </AnimateHeight>
         )
     }

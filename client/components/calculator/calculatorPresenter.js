@@ -19,11 +19,11 @@ export default class Calculator extends React.Component {
 
     buttonHandler(event) {
         let number = event.target.innerHTML;
-        this.props.setUsageValue(this.props.currentValue + number)
+        this.props.setCurrentUsageValue(this.props.currentValue + number)
     }
 
     eraseHandler() {
-        this.props.setUsageValue(this.props.currentValue.slice(0, -1))
+        this.props.setCurrentUsageValue(this.props.currentValue.slice(0, -1))
     }
 
     saveHandler() {

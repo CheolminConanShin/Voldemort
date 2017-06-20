@@ -24,7 +24,7 @@ const calculatorReducer = (state=initialState, action) => {
                 }
             })
         }
-        case types.SET_USAGE_VALUE: {
+        case types.SET_CURRENT_USAGE_VALUE: {
             return Object.assign({}, state, {
                 currentValue: action.value
             })

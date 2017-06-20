@@ -19,9 +19,9 @@ export const setCalculatorData = (cardInfo) => {
     }
 }
 
-export const setUsageValue = (value) => {
+export const setCurrentUsageValue = (value) => {
     return {
-        type: types.SET_USAGE_VALUE,
+        type: types.SET_CURRENT_USAGE_VALUE,
         value: value
     }
 }
