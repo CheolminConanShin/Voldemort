@@ -16,6 +16,14 @@ const calculatorReducer = (state=initialState, action) => {
                 cardInfo: action.cardInfo
             })
         }
+        case types.UPDATE_USED_VALUE: {
+            return Object.assign({}, state, {
+                cardInfo: {
+                    total: state.cardInfo.total,
+                    used: action.updateValue
+                }
+            })
+        }
         case types.SET_USAGE_VALUE: {
             return Object.assign({}, state, {
                 currentValue: action.value

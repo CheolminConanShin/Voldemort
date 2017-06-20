@@ -9,13 +9,16 @@ import CalculatorPresenter from './calculatorPresenter'
 const mapStateToProp = (state) => {
     return {
         toggle: state.calculatorReducer.toggle,
-        cardInfo: state.calculatorReducer.cardInfo
+        cardInfo: state.calculatorReducer.cardInfo,
+        currentValue: state.calculatorReducer.currentValue
     }
 }
 
 const mapDispatchToProp = (dispatch) => {
     return {
-        toggleCalculatorViewOFF: () => dispatch(CalculatorActions.toggleCalculatorViewOFF())
+        toggleCalculatorViewOFF: () => dispatch(CalculatorActions.toggleCalculatorViewOFF()),
+        updateUsedValue: (value) => dispatch(CalculatorActions.updateUsedValue(value)),
+        setUsageValue: (value) => dispatch(CalculatorActions.setUsageValue(value))
     }
 }
 
@@ -24,10 +27,10 @@ export default class CalculatorContainer extends React.Component {
     constructor(props) {
         super(props)
 
-        this.updateCardData = this.updateCardData.bind(this)
+        this.updateCardUsedAmountInDB = this.updateCardUsedAmountInDB.bind(this)
     }
 
-    updateCardData(sumUsedAmount) {
+    updateCardUsedAmountInDB(sumUsedAmount) {
         FirebaseConnector.ref('userId_1/cardNumber_1').update({
             'used' : sumUsedAmount
         })
@@ -40,7 +43,7 @@ export default class CalculatorContainer extends React.Component {
                 duration={ 1000 }
                 height={ this.props.toggle ? 'auto' : 0 }
                 easing={'true'}>
-                <CalculatorPresenter cardInfo={this.props.cardInfo} updateCardData={this.updateCardData}/>
+                <CalculatorPresenter {...this.props} updateCardData={this.updateCardUsedAmountInDB}/>
             </AnimateHeight>
         )
     }

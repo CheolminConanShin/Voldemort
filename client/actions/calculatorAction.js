@@ -25,3 +25,10 @@ export const setUsageValue = (value) => {
         value: value
     }
 }
+
+export const updateUsedValue = (value) => {
+    return {
+        type: types.UPDATE_USED_VALUE,
+        updateValue: value
+    }
+}

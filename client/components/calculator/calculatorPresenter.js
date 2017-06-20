@@ -1,5 +1,4 @@
 import React from "react";
-
 import NumbersPresenter from "./numbersPresenter";
 
 const styles = {
@@ -13,13 +12,6 @@ export default class Calculator extends React.Component {
     constructor(props) {
         super(props)
 
-        this.state = {
-            cardName: '국민 XXXX',
-            total: this.props.cardInfo.total + "",
-            used: this.props.cardInfo.used + "",
-            usage: ''
-        }
-
         this.buttonHandler = this.buttonHandler.bind(this)
         this.eraseHandler = this.eraseHandler.bind(this)
         this.saveHandler = this.saveHandler.bind(this)
@@ -27,21 +19,18 @@ export default class Calculator extends React.Component {
 
     buttonHandler(event) {
         let number = event.target.innerHTML;
-        this.setState({
-            usage: this.state.usage + number
-        })
+        this.props.setUsageValue(this.props.currentValue + number)
     }
 
     eraseHandler() {
-        this.setState({
-            usage: this.state.usage.slice(0, -1)
-        })
+        this.props.setUsageValue(this.props.currentValue.slice(0, -1))
     }
 
     saveHandler() {
-        const usage = this.state.usage == '' ? 0 : this.state.usage
-        const sumUsedAmount = parseInt(this.state.used) + parseInt(usage);
-        this.props.updateCardData(sumUsedAmount)
+        const usage = this.props.currentValue == '' ? 0 : this.props.currentValue
+        const sumUsedAmount = parseInt(this.props.cardInfo.used) + parseInt(usage);
+        this.props.updateCardUsedAmountInDB(sumUsedAmount)
+        this.props.updateUsedValue(sumUsedAmount)
     }
 
     render() {
