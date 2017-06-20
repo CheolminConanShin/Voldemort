@@ -9,7 +9,7 @@ describe('Calculator Reducer', () => {
                 total: '',
                 used: ''
             },
-            currentValue: 0
+            currentValue: ''
         }
         const unknownAction = {
             type: 'UNKNOWN_ACTION'
