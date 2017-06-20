@@ -18,3 +18,10 @@ export const setCalculatorData = (cardInfo) => {
         cardInfo: cardInfo
     }
 }
+
+export const setUsageValue = (value) => {
+    return {
+        type: types.SET_USAGE_VALUE,
+        value: value
+    }
+}

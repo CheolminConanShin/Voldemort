@@ -4,9 +4,9 @@ const initialState = {
     toggle: false,
     cardInfo: {
         total: '',
-        used: ''
+        used: '',
     },
-    currentValue: 0
+    currentValue: ''
 }
 
 const calculatorReducer = (state=initialState, action) => {
@@ -14,6 +14,11 @@ const calculatorReducer = (state=initialState, action) => {
         case types.SET_CALCULATOR_DATA: {
             return Object.assign({}, state, {
                 cardInfo: action.cardInfo
+            })
+        }
+        case types.SET_USAGE_VALUE: {
+            return Object.assign({}, state, {
+                currentValue: action.value
             })
         }
         case types.TOGGLE_CALCULATOR_VIEW:
